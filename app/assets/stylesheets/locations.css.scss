@@ -1,0 +1,44 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+// variables
+$background: asset_url("transparent-background.png") repeat;
+
+//mixins
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+  border-radius: $radius;
+}
+
+//             About Us
+.about_us {
+  width: 60%;
+  min-width: 400px;
+  margin: 3% auto 0;
+  border: 2px solid #FFFFFF;
+  @include border-radius(20px);
+  background: $background;
+  h2 {
+    overflow: hidden;
+    width: 320px;
+    height: 100px;
+    margin: 10px auto;
+  }
+  p {
+    padding: 10px;
+    margin: 10px;
+    text-align: justify;
+    font-size: 18px;
+    line-height: 30px;
+    &:first-letter {
+      padding-left: 20px;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 30px;
+      color: #FEDB2F;
+    }
+  }
+}

@@ -1,0 +1,60 @@
+<div class="left_panel">
+  <ul>
+    <li class="inbox_tab">Входящие</li>
+    <li class="outbox_tab">Исходящие</li>
+  </ul>
+  <ul id="user_messages" class="inbox">
+    <% @messages_inbox.each do |message| %>
+      <%= link_to(message_path(message, inbox: true), remote: true ) do %>
+        <li class="message_block <%= 'not_read_message' unless message.read == true %>">
+            <div class="img"><%= image_tag message.sender.avatar_url(:small) %></div>
+            <div class="message_header">
+                <h4><%= message.sender.first_name %> <%= message.sender.last_name %></h4>
+                <span class="message_date"><%= message.created_at.strftime("%d.%m.%Y") %></span>
+            </div>
+            <!-- <div class="delete_message">Delete</div> -->
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+  <ul id="user_messages" class="outbox">
+    <% @messages_outbox.each do |message| %>
+      <%= link_to(message_path(message), remote: true ) do %>
+        <li class="message_block <%= 'not_read_message' unless message.read == true %>">
+          <div class="img"><%= image_tag message.recepient.avatar_url(:small) %></div>
+          <div class="message_header">
+            <h4><%= message.recepient.first_name %> <%= message.recepient.last_name %></h4>
+            <span class="message_date"><%= message.created_at.strftime("%d.%m.%Y") %></span>
+          </div>
+          <%= link_to raw("<div class='delete_message'>Delete</div>"),
+              message_path(message),
+                          :method => :delete,
+                          :data => { :confirm => 'Вы уверены что хотите удалить сообщение?' } %>
+
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+<div id="message_text"></div>
+
+
+<style type="text/css">
+  .outbox {
+    display: none;
+  }
+  .not_read_message h4 {
+    border-color: red;
+    color: red;
+  }
+</style>
+<script type="text/javascript">
+  $('.inbox_tab').click(function () {
+    $('.inbox').show();
+    $('.outbox').hide();
+  });
+  $('.outbox_tab').click(function () {
+    $('.inbox').hide();
+    $('.outbox').show();
+  });
+</script>

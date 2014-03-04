@@ -1,0 +1,120 @@
+uk:
+  uk: "uk"
+  ru: "ru"
+  en: "en"
+  map: "Карта"
+  log_out: "Вихід"
+  log_in: "Вхід"
+  sign_in: "Авторизація"
+  sign_up: "Реєстрація"
+  top_authors: "Рейтинг авторів"
+  about_us: "Про нас"
+  feedback: "Зворотній зв'язок"
+  forgot_password: "Забули пароль?"
+  password: "Пароль"
+
+  confirmation_instructions: "Не отримали лист з підтвердженням?"
+  unlock_instructions: "Не отримали інструкції розблокування?"
+  reset_password: "Введіть свій email щоб ми могли надіслати інструкції скидання паролю."
+  resend_confirmation: "Введіть свій email щоб ми могли надіслати листа з підтвердженням."
+
+  resend: "Відправити"
+  show_history: "Показати історію"
+  change_password: "Змінити пароль"
+  new_password: "Новий пароль"
+  confirm_new_password: "Підтвердження нового паролю"
+  change_my_password: "Змінити мій пароль"
+  log_in_with: "Вхід через"
+
+  sign_up_with: "Реєстрація за допомогою"
+  ordinary_sign_up: "Звичайна реєстрація"
+  male: "чоловіча"
+  female: "жіноча"
+
+  upload_photo: "Завантажити фото"
+  create_report: "Створити звіт"
+  add_photo: "Додати фото"
+  upload: "Завантажити"
+
+  admin_photos: "Фото"
+  edit_photo: "Редагувати фото"
+  confirm_photo: "Підтвердити фото"
+  delete_photo: "Видалити фото"
+  select_all: "Всі"
+  date: "Дата"
+  author: "Автор"
+  status: "Статус"
+  last_month: "Останній місяць"
+  last_week: "Останній тиждень"
+  last_day: "Останній день"
+  place: "Місце"
+  save: "Зберегти"
+  cancel: "Відмінити"
+  admin_users: "Користувачі"
+  name: "Ім'я"
+  surname: "Прізвище"
+  date_of_birth: "Дата народження"
+  reg_date: "Дата реєстрації"
+  gender: "Стать"
+  photo: "Фото"
+  complaints: "Кіл. скарг"
+  number_of_photos: "Кіл. фото"
+  block_upload: "Заблокувати загрузку фото"
+  unblock_upload: "Розблокувати загрузку фото"
+  delete_user: "Видалити користувача"
+  contact_user: "Написати користувачу"
+
+  uploaded_photo: "Загружені фото"
+  confirmed_photo: "Підтверджені фото"
+  messages: "Повідомлення"
+  edit_profile: "Редагування профілю"
+
+  most_active: "Найактивніші"
+  last_upload: "Останні"
+  most_popular: "Найпопулярніші"
+
+  send: "Відправити"
+
+  nick_info: "Help info"
+
+  author_search: "Пошук автора"
+  find: "Знайти"
+  admin_rights: "Надати права адміна"
+  not_admin_rights: "Зняти права адміна"
+
+  edit_password: "Змінити пароль"
+
+  controllers:
+    application:
+      auth_user: "Ви повинні зареєструватися або увійти."
+      admin_user: "Ви не адміністратор!!!"
+      block_upload: "Можливість завантаження фото заблокована адміністратором."
+    locations:
+      create_photo: "Додано %{photo_count} фото."
+      not_create_photo: "Помилка. Фото не додано."
+    messages:
+      create_message: "Повідомлення відправлено."
+      not_create_message: "Помилка. Повідомлення не відправлено."
+      destroy_message: "Повідомлення видалено."
+      not_destroy_message: "Ви не власник повідомлення!"
+    photos:
+      destroy_photo: "Фото видалено."
+      not_destroy_photo: "Ви не власник фото!"
+    users:
+      not_show_profile: "У вас немає доступу до цієї сторінки."
+      update_profile: "Профіль успішно оновлено."
+      not_update_profile: "Помилка."
+    admin_photos:
+      update_photo: 'Фото успішно оновлено.'
+      chooses_photo: "Оберіть фото!"
+      approved_photo: "Фото успішно підтверджені."
+      destroy_photo: "Фото видалені."
+      select_action: "Оберіть дію."
+    admin_users:
+      chooses_user: "Оберіть користувача!"
+      not_upload_photo: 'Можливість додавати фото заблокована.'
+      upload_photo: 'Можливість додавати фото розблокована.'
+      destroy_users: "Користувачі видалені."
+      role_admin: "Права адміністратора надано."
+      not_role_admin: "Права адміністратора знято."
+      select_action: "Оберіть дію."

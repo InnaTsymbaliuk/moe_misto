@@ -1,0 +1,98 @@
+<div id="registration-container">
+<div class="social-links">
+  <h4><%= t('sign_up_with') %></h4>
+    <ul>
+      <li class="vk"><%= link_to 'Vkontakte', user_omniauth_authorize_path(:vkontakte) %></li>
+      <li class="fb"><%= link_to 'Facebook', user_omniauth_authorize_path(:facebook) %></li>
+    </ul>
+</div>
+<div id="registration">
+  <h4><%= t('ordinary_sign_up') %></h4>
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :id => "reg_new_user" }) do |f| %>
+      <fieldset>
+
+        <dl>
+          <dt><%= f.label :nick %></dt>
+          <dd>
+            <%= f.text_field :nick, :autofocus => true %>
+            <!-- TODO refactor this -->
+            <!-- , :name => "user_nick" -->
+            <div id="login-error" class="error"></div>
+            <div class="help-info"><%= t('nick_info') %></div>
+          </dd>
+
+          <dt><%= f.label :first_name %></dt>
+          <dd>
+            <%= f.text_field :first_name  %>
+            <!-- , :name => "user_first_name" -->
+            <div id="name-error" class="error"></div>
+            <div class="help-info"><%= t('nick_info') %></div>
+          </dd>
+
+          <dt><%= f.label :last_name %></dt>
+          <dd>
+            <%= f.text_field :last_name %>
+            <!-- , :name => "user_last_name" -->
+            <div id="surname-error" class="error"></div>
+            <div class="help-info"><%= t('nick_info') %></div>
+          </dd>
+
+          <dt><%= f.label :birth_date %></dt>
+          <dd>
+            <%= f.text_field :birth_date %>
+            <!-- , :name => "user_birth_date" -->
+            <div id="date-error" class="error"></div>
+            <div class="help-info"><%= t('nick_info') %></div>
+          </dd>
+
+          <dt class="gender"><%= f.label :gender %></dt>
+          <dd class="gender">
+            <%= f.radio_button(:gender, User::GENDER[0]) %>
+            <!-- , :name => "user_gender_male" -->
+            <%= f.label(:gender, t('male')) %>
+            <div class="help-info"><%= t('nick_info') %></div>
+          </dd>
+          <dd class="gender">
+            <%= f.radio_button(:gender, User::GENDER[1]) %>
+            <!-- , :name => "user_gender_female" -->
+            <%= f.label(:gender, t('female')) %>
+            <div class="help-info"><%= t('nick_info') %></div>
+          </dd>
+
+          <dt><%= f.label :email %></dt>
+          <dd>
+            <%= f.email_field :email %>
+            <!-- , :name => "user_email" -->
+            <div id="e-mail-error" class="error"></div>
+            <div class="help-info"><%= t('nick_info') %></div>
+          </dd>
+
+          <dt><%= f.label :password %></dt>
+          <dd>
+            <%= f.password_field :password %>
+            <!-- , :name => "user_password" -->
+            <div id="password-error" class="error"></div>
+            <div class="help-info"><%= t('nick_info') %></div>
+          </dd>
+
+          <dt><%= f.label :password_confirmation %></dt>
+          <dd>
+            <%= f.password_field :password_confirmation %>
+            <!-- , :name => "user_password_confirmation" -->
+            <div id="password-repeat-error" class="error"></div>
+            <div class="help-info"><%= t('nick_info') %></div>
+          </dd>
+          <dt id="captcha">
+            <%= recaptcha_tags %>
+          </dt>
+          <dt class="submit"><%= f.submit t('sign_up'), class: 'btn' %></dt>
+        </dl>
+      </fieldset>
+  <% end %>
+  <%= render "devise/shared/links" %>
+</div>
+</div>
+
+  <script>
+  manageRegistration();
+  </script>

@@ -1,0 +1,32 @@
+<% if params[:profile] == 'true' %>
+  $("#user_tab_content").html("<%= j render('edit_profile') %>");
+  $(".confirmed_photo").removeClass("active");
+  $(".uploaded_photo").removeClass("active");
+  $(".user_message").removeClass("active");
+  $(".edit_profile").addClass("active");
+<% elsif params[:profilePhoto] == 'true' %>
+  $("#user_tab_content").html("<%= j render('edit_profile_photo') %>");
+  $(".uploaded_photo").removeClass("active");
+  $(".user_message").removeClass("active");
+  $(".confirmed_photo").removeClass("active");
+  $(".edit_profile").removeClass("active");
+<% elsif params[:timeline] == 'true' %>
+  $("#user_tab_content").html("<%= j render('photos_timeline') %>");
+  $(".uploaded_photo").removeClass("active");
+  $(".user_message").removeClass("active");
+  $(".confirmed_photo").addClass("active");
+  $(".edit_profile").removeClass("active");
+<% elsif params[:uploaded] == 'true' %>
+  $("#user_tab_content").html("<%= j render('photos_uploaded') %>");
+  $(".confirmed_photo").removeClass("active");
+  $(".user_message").removeClass("active");
+  $(".uploaded_photo").addClass("active");
+  $(".edit_profile").removeClass("active");
+<% elsif params[:messages] == 'true' %>
+  $("#user_tab_content").html("<%= j render('user_messages') %>");
+  $(".confirmed_photo").removeClass("active");
+  $(".uploaded_photo").removeClass("active");
+  $(".user_message").addClass("active");
+  $(".edit_profile").removeClass("active");
+<% end %>
+

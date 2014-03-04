@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/source/moe-misto/!svn/ver/356/trunk/config/locales
+END
+devise.en.yml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/source/moe-misto/!svn/ver/174/trunk/config/locales/devise.en.yml
+END
+en.yml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/source/moe-misto/!svn/ver/356/trunk/config/locales/en.yml
+END
+devise.ru.yml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/source/moe-misto/!svn/ver/174/trunk/config/locales/devise.ru.yml
+END
+ru.yml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/source/moe-misto/!svn/ver/356/trunk/config/locales/ru.yml
+END
+devise.uk.yml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/source/moe-misto/!svn/ver/174/trunk/config/locales/devise.uk.yml
+END
+en.bootstrap.yml
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/source/moe-misto/!svn/ver/83/trunk/config/locales/en.bootstrap.yml
+END
+uk.yml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/source/moe-misto/!svn/ver/356/trunk/config/locales/uk.yml
+END

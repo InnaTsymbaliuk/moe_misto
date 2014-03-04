@@ -1,0 +1,145 @@
+#map_canvas {
+  background-color: #CCC;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  z-index: 7;
+}
+
+/*-------------------------------------CONTENT--------------------------------------*/
+
+/* Styles for shadow layer*/
+
+#layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+}
+
+#eventRectangle {
+  position: relative;
+  z-index: 9;
+}
+
+.layer {
+  position: absolute;
+}
+
+.transparency {
+  background: asset_url("transparent-background.png") repeat;
+  color: rgba(0, 0, 0, 0.75);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+}
+
+#layerLeft {
+  top: 0;
+  left: 0;
+}
+
+#layerDown {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+}
+
+#layerRight {
+  top: 0;
+  right: 0;
+}
+
+#layerUp {
+  top: 0;
+}
+
+/*Images in layers align*/
+
+#layer img {
+  max-width: 70%;
+  max-height: 70%;
+  position: inherit;
+  opacity: 1 !important;
+  padding: 5px;
+  background: asset_url("preview-background.png") repeat;
+  z-index: 1;
+}
+
+/*------Change-mode button-------*/
+
+#change-mode {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  z-index: 8;
+  padding: 1px 0 !important;
+  width: 100px;
+}
+
+.ui-button-text-only .ui-button-text {
+  padding: 0;
+}
+
+#controll {
+  z-index: 8;
+}
+
+.click-mode:after {
+  content: "Click mode";
+}
+
+.select-mode:after {
+  content: "Select mode";
+}
+
+/*SVG tails for preview*/
+
+#layer svg {
+  position: absolute;
+  z-index: 12;
+  pointer-events: none;
+  top: 0;
+  path {
+    stroke: rgba(128, 128, 128, 0);
+    stroke-width: 1px;
+    fill: rgba(128, 128, 128, 0.65);
+  }
+}
+
+#layerLeft img {
+  right: 10%;
+  bottom: 10%;
+}
+
+#layerDown img {
+  margin: 0 35%;
+  top: 10%;
+}
+
+#layerRight img {
+  left: 10%;
+  bottom: 10%;
+}
+
+#layerUp img {
+  margin: 0 35%;
+  bottom: 10%;
+}
+
+/*------Markers label style-------*/
+.labels {
+  color: white;
+  //background-color: red;
+  font-family: "Lucida Grande", "Arial", sans-serif;
+  font-size: 12px;
+  text-align: center;
+  width: 15px;
+  white-space: nowrap;
+}

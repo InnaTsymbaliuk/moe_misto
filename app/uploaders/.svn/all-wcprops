@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/source/moe-misto/!svn/ver/332/trunk/app/uploaders
+END
+avatar_uploader.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/source/moe-misto/!svn/ver/332/trunk/app/uploaders/avatar_uploader.rb
+END
+image_uploader.rb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/source/moe-misto/!svn/ver/308/trunk/app/uploaders/image_uploader.rb
+END

@@ -1,0 +1,31 @@
+<ul id="user_messages">
+  <% @messages.each do |message| %>
+    <li class="message_block">
+
+      <div class="message_header">
+
+          <span class="message_date"><%= message.created_at.strftime("%d.%m.%Y") %></span>
+      </div>
+      <div style="padding: 25px 0 5px 50px;"><%= message.message_text %></div>
+    </li>
+    <li><%= link_to raw("<div class='delete_message'>Delete</div>"),
+                message_path(message),
+                            :method => :delete,
+                            :data => { :confirm => 'Вы уверены что хотите удалить сообщение?' } %>
+    </li>
+  <% end %>
+
+</ul>
+<div class="answer_form">
+  <%= form_for Message.new do |f| %>
+    <%= f.hidden_field :recepient_id, value: @senser.id %>
+    <div class="content">
+      <%= f.text_area :message_text %>
+    </div>
+    <div class="footer">
+      <ul>
+        <li><%= f.submit t('send'), class: 'btn' %></li>
+      </ul>
+    </div>
+  <% end %>
+</div>

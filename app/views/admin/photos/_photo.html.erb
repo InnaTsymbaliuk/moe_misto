@@ -1,0 +1,14 @@
+<div class="photo_block <%= 'not_approved' if photo.approved == false %>">
+  <div class="miniature"><%= image_tag photo.image_url(:small), id: photo.id %></div>
+  <%= check_box_tag "photo_id_#{photo.id}", "#{photo.id}" %>
+
+  <ul class="info">
+    <% if current_user && (photo.user != current_user) %>
+      <li class="write"><%= link_to t('contact_user'), recepient_path(recepient: photo.user.id), method: :post, remote: true, title: t('contact_user') %></li>
+    <% end %>
+    <li><%= t('author') %>: <%= "#{photo.user.first_name} #{photo.user.last_name}" %></li>
+    <li><%= t('date') %>: <%= photo.photo_date.strftime("%d.%m.%Y") %></li>
+    <li><%= t('place') %>: <%= photo.location.address %></li>
+    <li class="edit_image"><%= link_to t('edit_photo'), edit_admin_photo_path(photo) %></li>
+  </ul>
+</div>

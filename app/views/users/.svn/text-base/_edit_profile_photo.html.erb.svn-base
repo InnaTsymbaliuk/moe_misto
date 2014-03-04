@@ -1,0 +1,17 @@
+<div class="update_user_profile">
+<%= form_for @user do |f| %>
+  <fieldset>
+    <div class="profile_photo"><%= image_tag (@user.avatar_url ? @user.avatar_url(:large) : 'avatar.png') %></div>
+      <ul>
+        <li><%= f.file_field :avatar %></li>
+        <li>
+          <%= f.check_box :remove_avatar %>
+          <%= t('delete_photo') %>
+        </li>
+        <li class="submit"><%= f.submit t('save'), class: 'btn' %></li>
+      </ul>
+  </fieldset>
+<% end %>
+</div>
+
+

@@ -1,0 +1,15 @@
+$("#message_popup").html("<%= j render 'message_form' %>");
+$("#message_popup").dialog({
+    width: 400,
+    height: 280,
+    resizable: false,
+    draggable: false,
+    title: "Message",
+    modal: true,
+    open: function(){
+        $("#message-close").click(function(){
+            $("#message_popup").dialog("close");
+        });
+
+    }
+});

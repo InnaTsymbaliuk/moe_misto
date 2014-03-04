@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/source/moe-misto/!svn/ver/311/trunk/config/environments
+END
+test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/source/moe-misto/!svn/ver/83/trunk/config/environments/test.rb
+END
+development.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/source/moe-misto/!svn/ver/121/trunk/config/environments/development.rb
+END
+production.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/source/moe-misto/!svn/ver/311/trunk/config/environments/production.rb
+END

@@ -1,0 +1,69 @@
+<div class="admin_photo">
+  <h2 class="admin_title"><%= t('admin_photos') %></h2>
+
+  <%= form_tag("/admin/approved_destroy", method: "post") do %>
+
+    <div class="admin_sidebar">
+      <ul>
+        <li>
+          <%= radio_button_tag(:approved_delete, "approved") %>
+          <%= label_tag(:approved_delete, t('confirm_photo')) %>
+        </li>
+        <li>
+          <%= radio_button_tag(:approved_delete, "delete") %>
+          <%= label_tag(:approved_delete, t('delete_photo')) %>
+        </li>
+      </ul>
+      <%= submit_tag("Ok", class: 'btn') %>
+    </div>
+
+    <div class="admin_content">
+      <ul class="sort">
+        <li>
+          <%= t('select_all') %>: <%= check_box_tag "photos", "all" %>
+          <% if params[:last_mounth] %>
+            <%= hidden_field_tag :last_mounth, true %>
+          <% elsif params[:last_week] %>
+            <%= hidden_field_tag :last_week, true %>
+          <% elsif params[:last_day] %>
+            <%= hidden_field_tag :last_day, true %>
+          <% end %>
+        </li>
+        <li><%= t('date') %>: (<%= link_to 'Sort_up', admin_photos_path(date: 'asc'), class: 'sort_up' %>) (<%= link_to 'Sort_down', admin_photos_path(date: 'desc'), class: 'sort_down' %>)</li>
+        <li><%= t('author') %>: (<%= link_to 'Sort_up', admin_photos_path(autor: 'asc'), class: 'sort_up' %>) (<%= link_to 'Sort_down', admin_photos_path(autor: 'desc'), class: 'sort_down' %>)</li>
+        <li><%= t('status') %>: (<%= link_to 'Sort_up', admin_photos_path(status: 'asc'), class: 'sort_up' %>) (<%= link_to 'Sort_down', admin_photos_path(status: 'desc'), class: 'sort_down' %>)</li>
+        <li><%= link_to t('select_all'), admin_photos_path %></li>
+        <li><%= link_to t('last_month'), admin_photos_path(last_mounth: true) %></li>
+        <li><%= link_to t('last_week'), admin_photos_path(last_week: true) %></li>
+        <li><%= link_to t('last_day'), admin_photos_path(last_day: true) %></li>
+      </ul>
+
+      <div class="photo_list">
+        <% if params[:date] || params[:autor] || params[:status] %>
+          <%= render 'group_photo' %>
+        <% else %>
+          <%= render @photos %>
+        <% end %>
+      </div>
+    </div>
+
+  <% end %>
+</div>
+<%= will_paginate @photos unless params[:date] || params[:autor] || params[:status] %>
+
+<div id='dialog-content'>
+    <div class="photo">
+        <img id='dialog-photo' src="">
+    </div>
+    <div id='dialog-data'></div>
+</div>
+
+<!-- TODO: refactor this -->
+<script type="text/javascript">
+    manageAdminPhotos();
+</script>
+<style type="text/css">
+.pagination {
+    display: none;
+}
+</style>

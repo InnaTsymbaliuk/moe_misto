@@ -1,0 +1,23 @@
+development:
+  adapter: postgresql
+  database: misto_development
+  pool: 5
+  timeout: 5000
+  username: postgres
+  password: password
+
+test:
+  adapter: postgresql
+  database: misto_test
+  pool: 5
+  timeout: 5000
+  username: postgres
+  password: password
+
+production:
+  adapter: postgresql
+  database: moemisto
+  pool: 5
+  timeout: 5000
+  username: moemisto
+  password: password

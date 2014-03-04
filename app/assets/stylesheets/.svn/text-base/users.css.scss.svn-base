@@ -1,0 +1,242 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.scss.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$background: asset_url("transparent-background.png") repeat;
+
+@mixin box-sizing($box-type) {
+  box-sizing: $box-type;
+  -moz-box-sizing: $box-type;
+  -webkit-box-sizing: $box-type;
+}
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+  border-radius: $radius;
+}
+.edit-icon {
+  float: left;
+  height: 20px;
+  width: 20px;
+}
+.icon {
+  overflow: hidden;
+  background: asset_url('glyphicons-halflings-white.png') no-repeat;
+  text-indent: -999px;
+}
+
+
+#user_account {
+  overflow: auto;
+  height: 100%;
+  padding: 2%;
+  @include box-sizing(border-box);
+  #sidebar {
+    float: left;
+    width: 250px;
+    .profile_photo {
+      position: relative;
+      overflow: hidden;
+      width: 150px;
+      height: 150px;
+      margin: 0 auto;
+      img {
+        width: 130px;
+        height: 130px;
+        margin: 10px;
+        border: 2px solid #fff;
+        @include border-radius(150px);
+        @include box-sizing(border-box);
+      }
+      .edit {
+        position: absolute;
+        top: 0;
+        right: 0;
+        @extend .edit-icon;
+        background: green;
+        @include border-radius(0 8px 0 0);
+        a {
+          display: block;
+          @extend .icon;
+          background-position: 3px -69px;
+        }
+        &:before {
+          content: "";
+          display: block;
+          position: absolute;
+          left: -20px;
+          border-color: green transparent;
+          border-style: solid;
+          border-width: 20px 0 0 20px;
+        }
+        &:after {
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: -20px;
+          border-color: green transparent;
+          border-style: solid;
+          border-width: 20px 0 0 20px;
+        }
+      }
+    }
+    h3 {
+      text-align: center;
+      font-size: 20px;
+    }
+    .user_tab {
+      position: relative;
+      margin: 50px 0 0;
+      background: $background;
+      border: 1px solid #fff;
+      border-right: none;
+      @include border-radius(5px 0 0 5px);
+      li {
+        padding-left: 20px;
+        border-top: 1px solid #fff;
+        &:first-child {
+          border-top: none;
+        }
+        a {
+          font-size: 16px;
+          line-height: 40px;
+        }
+        &.active {
+          position: relative;
+          width: 230px;
+          background: #000000;
+          a {
+            color: #ffffff;
+            line-height: 46px;
+          }
+          &:first-child {
+            @include border-radius(5px 0 0);
+          }
+          &.edit_profile {
+            @include border-radius(0 0 0 5px);
+          }
+        }
+      }
+    }
+  }
+  #user_tab_content {
+    overflow-x: hidden;
+    position: relative;
+    height: 100%;
+    min-height: 400px;
+    @include box-sizing(border-box);
+    padding: 10px;
+    background: $background;
+    border: 1px solid #fff;
+    @include border-radius(5px);
+
+    .user_photo {
+      display: inline-block;
+      .miniature {
+        position: relative;
+        padding: 0;
+        margin: 5px;
+        .delete {
+          position: absolute;
+          top: 0;
+          right: 0;
+          height: 15px;
+          width: 15px;
+          background: #000000;
+          a {
+            display: block;
+            @extend .icon;
+            background-position: -311px 0;
+          }
+        }
+      }
+    }
+
+    .update_user_profile {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 260px;
+      padding: 10px;
+      margin: -200px 0 0 -140px;
+      .profile_photo {
+        overflow: hidden;
+        width: 260px;
+        height: 260px;
+        margin: 0 auto;
+        border: 1px solid #FFFFFF;
+        img {
+          max-width: 100%;
+          max-height: 100%;
+        }
+      }
+      ul>li {
+        margin: 5px 0;
+      }
+      dt {
+        float: left;
+        clear: left;
+        width: 130px;
+        height: 40px;
+        &.gender {
+          height: 50px;
+        }
+      }
+      .submit {
+        clear: both;
+        width: 100%;
+        .btn {
+          display: block;
+          width: 200px;
+          height: 30px;
+          margin: 0 auto;
+          font-size: 14px;
+        }
+      }
+      dd {
+        float: right;
+        overflow: hidden;
+        input {
+          width: 125px;
+        }
+        &.gender{
+          width: 125px;
+          input {
+            width: 15px;
+          }
+        }
+      }
+      .edit_password_link {
+        width: 100%;
+        background: transparent;
+        border: none;
+        font-size: 14px;
+        color: #FFFFFF;
+        text-decoration: underline;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+#dialog-content {
+  display: none;
+  z-index: 550;
+  .photo {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    img{
+      max-height: 100%;
+      max-width: 100%;
+    }
+  }
+}
+
+
+
+
+

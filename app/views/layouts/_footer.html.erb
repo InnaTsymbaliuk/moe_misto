@@ -1,0 +1,22 @@
+<footer>
+  <nav>
+    <ul>
+      <li class="<%= 'active_link' if controller_name == 'home' && action_name == 'about_us' %>"><%= link_to t('about_us'), about_us_path %></li>
+      <li><a href="javascript:void(0);"><%= t('feedback') %></a></li>
+
+      <% if current_user && (current_user.is_admin? || current_user.is_superadmin?) %>
+        <li class="<%= 'active_link' if controller_name == 'photos' %>"><%= link_to t('admin_photos'), admin_photos_path %></li>
+        <li class="<%= 'active_link' if controller_name == 'users'&& action_name == 'index' %>"> <%= link_to t('admin_users'), admin_users_path %></li>
+      <% end %>
+
+    </ul>
+  </nav>
+  <ul class="locale">
+    <li><%= link_to_unless I18n.locale == :ru, t('ru'), locale: :ru %></li>
+    <li><%= link_to_unless I18n.locale == :uk, t('uk'), locale: :uk %></li>
+    <li><%= link_to_unless I18n.locale == :en, t('en'), locale: :en %></li>
+  </ul>
+  <div class="partners">
+    ПАРТНЕРИ!!!!
+  </div>
+</footer>

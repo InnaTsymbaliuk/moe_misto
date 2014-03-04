@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/source/moe-misto/!svn/ver/355/trunk/app/views/home
+END
+_timeline.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/source/moe-misto/!svn/ver/323/trunk/app/views/home/_timeline.html.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/source/moe-misto/!svn/ver/355/trunk/app/views/home/index.html.erb
+END
+_show_photo.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/source/moe-misto/!svn/ver/287/trunk/app/views/home/_show_photo.html.erb
+END
+history.js.erb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/source/moe-misto/!svn/ver/272/trunk/app/views/home/history.js.erb
+END
+_upload_photo.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/source/moe-misto/!svn/ver/250/trunk/app/views/home/_upload_photo.html.erb
+END
+_map_click.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/source/moe-misto/!svn/ver/250/trunk/app/views/home/_map_click.html.erb
+END
+about_us.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/source/moe-misto/!svn/ver/348/trunk/app/views/home/about_us.html.erb
+END

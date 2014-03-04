@@ -1,0 +1,30 @@
+# encoding: utf-8
+# == Schema Information
+#
+# Table name: photos
+#
+#  id             :integer      not null, primary key
+#  approved       :boolean      default: false
+#  approved_date  :datetime
+#  photo_date     :datetime
+#  user_id        :integer
+#  shared_count   :integer
+#  created_at     :datetime
+#  updated_at     :datetime
+#  image          :string(255)
+#  location_id    :integer
+#
+
+class Photo < ActiveRecord::Base
+
+  mount_uploader :image, ImageUploader
+
+  belongs_to :user
+  belongs_to :location
+  has_many :claims
+
+  scope :approved_photo, -> { where(approved: 'true') }
+  scope :not_approved_photo, -> { where(approved: 'false') }
+
+
+end

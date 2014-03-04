@@ -1,0 +1,17 @@
+<div class="about_us">
+  <h2>
+    <img src="<%= asset_url('moemisto_logo.png') %>" alt="Моє місто" />
+    Моє місто
+  </h2>
+  <p id="about-us-text">
+      This is a web site on which you will be able to see the history of our city.
+      To see it in photos! Have you ever interested in how was looking some place
+      5 or 10 years ago? Maybe you also wanted to compare how it looks now and in the past.
+      Your street, house, crossroad or some place of interest. We always have memories,
+      and some evening this memories comes to your mind and you want to find something
+      to deal with them. And what if you haven’t things that can help you to remember?
+      You haven’t photos or they are far away from you… This site will help you certainly!
+      With the ability to search on map, have a report on some places with photo sequences
+      and of course with possibility to propose you own photos.
+  </p>
+</div>

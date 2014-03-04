@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/source/moe-misto/!svn/ver/289/trunk/app/views/devise/passwords
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/source/moe-misto/!svn/ver/207/trunk/app/views/devise/passwords/edit.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/source/moe-misto/!svn/ver/289/trunk/app/views/devise/passwords/new.html.erb
+END

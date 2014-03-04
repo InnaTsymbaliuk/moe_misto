@@ -1,0 +1,249 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require jquery.ui.all
+ *= require jquery.fileupload-ui
+ *= require toastmessage/jquery.toastmessage
+ *= require_tree .
+ */
+
+@mixin box-sizing($box-type) {
+  box-sizing: $box-type;
+  -moz-box-sizing: $box-type;
+  -webkit-box-sizing: $box-type;
+}
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+  border-radius: $radius;
+}
+
+.user {
+  margin: 20px auto;
+  width: 350px;
+}
+
+//------------------------------RESET DEFAULT STYLES
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #fff;
+  color: #000;
+}
+div, p, a, span, em, strong, img, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, td, tr, form, fieldset, label, select, input, textarea {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  list-style: none;
+}
+select, input {
+  vertical-align: middle;
+  font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+textarea {
+  font-size: 12px;
+  vertical-align: top;
+}
+:focus {
+  outline: none;
+}
+input[type=submit] {
+  cursor: pointer;
+}
+img, fieldset {
+  border: 0;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+a {
+  &:link, &:visited {
+    font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #999991;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  &:hover {
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+//-------------------------------------WRAPPER
+#wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+// IE8
+header, nav, section, article, aside, footer, hgroup {
+    display: block;
+}
+
+
+//-------------------------------------HEADER
+
+header, footer {
+  position: fixed;
+  z-index: 15;
+  width: 100%;
+  background: rgb(34, 34, 34);  // Old browsers
+  // IE9 SVG, needs conditional override of 'filter' to 'none'
+  background: -moz-linear-gradient(top, rgba(34, 34, 34, 1) 1%, rgba(17, 17, 17, 1) 100%);  // FF3.6+
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(1%, rgba(34, 34, 34, 1)), color-stop(100%, rgb(17, 17, 17)));  // Chrome,Safari4+
+  background: -webkit-linear-gradient(top, rgba(34, 34, 34, 1) 1%, rgba(17, 17, 17, 1) 100%);  // Chrome10+,Safari5.1+
+  background: -o-linear-gradient(top, rgba(34, 34, 34, 1) 1%, rgba(17, 17, 17, 1) 100%);  // Opera 11.10+
+  background: -ms-linear-gradient(top, rgba(34, 34, 34, 1) 1%, rgba(17, 17, 17, 1) 100%);  // IE10+
+  background: linear-gradient(to bottom, rgba(34, 34, 34, 1) 1%, rgba(17, 17, 17, 1) 100%);   // W3C
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#222222', endColorstr='#111111',GradientType=0 );  // IE6-8
+  color: #999991;
+  line-height: 20px;
+}
+
+header {
+  top: 0;
+  height: 60px;
+  h1 {
+    float: left;
+    overflow: hidden;
+    height: 60px;
+    width: 190px;
+    margin: 0 5px;
+    a {
+      display: block;
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+  nav {
+    overflow: hidden;
+    float: left;
+    span.respons {
+      display: none;
+    }
+    ul {
+      li {
+        float: left;
+        padding: 20px;
+        @include box-sizing(border-box);
+      }
+    }
+  }
+  .user-icon {
+    position: relative;
+    float: right;
+    padding-left: 10px;
+    a {
+      font-size: 20px;
+      line-height: 60px;
+      img {
+        float: right;
+        width: 60px;
+        margin-left: 5px;
+        @include border-radius(0 0 0 50px);
+      }
+    }
+    .exit {
+      position: absolute;
+      overflow: hidden;
+      bottom: -10px;
+      right: 0;
+      height: 20px;
+      width: 20px;
+      @include border-radius(30px);
+      background: #000 asset_url('glyphicons-halflings-white.png') no-repeat -116px -69px;
+      text-indent: -999px;
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  #authorization {
+    float: right;
+    margin: 20px;
+    &:hover {
+      color: #ffffff;
+    }
+  }
+}
+
+//------------------------------------CONTENT
+
+#content {
+  position: absolute;
+  top: 60px;
+  bottom: 40px;
+  width: 100%;
+}
+
+#container {
+  overflow: auto;
+  @extend #content;
+  background-image: asset_url("background.png");
+  background-size: cover;
+  color: #FFFAFA;
+  h4 {
+    margin-bottom: 5px;
+    font-size: 16px;
+    text-align: center;
+  }
+}
+
+//-------------------------------------FOOTER
+footer {
+  bottom: 0;
+  height: 41px;
+  text-align: center;
+  transition: 0.5s;
+  -moz-transition: 0.5s;    // Firefox 4
+  -webkit-transition: 0.5s;    // Safari and Chrome
+  -o-transition: 0.52s;   // Opera
+  &:hover {
+    height: 80px;
+  }
+  nav li {
+    float: left;
+    padding: 11px 20px;
+    @include box-sizing(border-box);
+  }
+  .locale {
+    float: right;
+    display: inline-block;
+    padding: 10px 15px;
+    color: #424242;
+    li {
+      display: inline-block;
+    }
+  }
+  .partners {
+    clear: both;
+  }
+}
+
+

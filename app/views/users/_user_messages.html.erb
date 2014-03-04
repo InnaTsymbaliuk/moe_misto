@@ -1,0 +1,16 @@
+<div class="left_panel">
+  <ul id="user_messages">
+    <% @messages_users.each do |key, messages| %>
+      <%= link_to(message_path(key), remote: true ) do %>
+        <li class="message_block">
+            <div class="img"><%= image_tag key.avatar_url(:small) %></div>
+            <div class="message_header">
+                <h4><%= key.first_name %> <%= key.last_name %></h4>
+                <span class="message_date"><%= messages.select{|m| m.read == true}.count %>(<%= messages.count %>)</span>
+            </div>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+<div id="message_text"></div>

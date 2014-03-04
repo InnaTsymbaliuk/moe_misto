@@ -1,0 +1,7 @@
+<ul>
+  <% @photos_timeline.each do |photo| %>
+    <li class="user_photo">
+        <div class="miniature"><%= image_tag photo.image_url(:small), id: photo.id %></div>
+    </li>
+  <% end %>
+</ul>

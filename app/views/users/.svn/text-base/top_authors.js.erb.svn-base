@@ -1,0 +1,1 @@
+$("#top_authors").html("<%= j render 'top_authors' %>");

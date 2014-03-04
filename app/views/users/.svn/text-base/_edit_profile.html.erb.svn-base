@@ -1,0 +1,42 @@
+<div class="update_user_profile">
+  <%= form_for @user do |f| %>
+    <fieldset>
+      <dl>
+        <dt><%= f.label :nick %></dt>
+        <dd>
+          <%= f.text_field :nick %>
+        </dd>
+
+        <dt><%= f.label :first_name %></dt>
+        <dd>
+          <%= f.text_field :first_name  %>
+        </dd>
+
+        <dt><%= f.label :last_name %></dt>
+        <dd>
+          <%= f.text_field :last_name %>
+        </dd>
+
+        <dt><%= f.label :birth_date %></dt>
+        <dd>
+          <%= f.text_field :birth_date, value: @user.birth_date.strftime("%d-%m-%Y") %>
+        </dd>
+
+        <dt class="gender"><%= f.label :gender %></dt>
+        <dd class="gender"><%= f.radio_button(:gender, User::GENDER[0]) %>
+        <%= f.label(:gender, "чоловіча") %></dd>
+        <dd class="gender"><%= f.radio_button(:gender, User::GENDER[1]) %>
+        <%= f.label(:gender, "жіноча") %></dd>
+
+        <dt><%= f.label :email %></dt>
+        <dd>
+          <%= f.email_field :email %>
+        </dd>
+
+        <dt class="submit"><%= f.submit t('save'), class: 'btn' %></dt>
+      </dl>
+    </fieldset>
+  <% end %>
+  <%= button_to t('edit_password'), update_password_user_path, remote: true, class: 'edit_password_link'  %>
+</div>
+

@@ -1,0 +1,17 @@
+<div id="show-photo">
+  <div id="photo"></div>
+  <h4 class="author">Автор:<a id="author" href="javascript:void(0);"></a></h4>
+  <ul class="menu">
+    <li class="vk-like"><a href="javascript:void(0);" title="Мені подобається">Мені подобається</a></li>
+    <li class="fb-like"><a href="javascript:void(0);" title="Мені подобається">Мені подобається</a></li>
+    <li class="conect"><a href="javascript:void(0);" title="Зв'язатись з автором">Зв'язатись з автором</a></li>
+    <li class="complain">
+      <a href="javascript:void(0);" title="Поскаржитись" id="complain">Поскаржитись</a>
+      <ul  class="complain-menu hide">
+        <li><a href="javascript:void(0);">Неправильне розміщення</a></li>
+        <li><a href="javascript:void(0);">Порушення авторських прав</a></li>
+        <li><a href="javascript:void(0);">Образливий зміст</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>

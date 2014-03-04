@@ -1,0 +1,136 @@
+.active_link {
+  border-right: 1px solid #000000;
+  border-left: 1px solid #000000;
+  background: rgb(17,17,17);
+  a {
+    color: #ffffff;
+    cursor: default;
+  }
+}
+
+//------------------------------------Load photo
+
+#photo-load {
+  position: absolute;
+  background: #ffffff;
+  border: 1px solid #999991;
+  color: #000;
+  z-index: 20;
+}
+
+.error {
+  display: block;
+  overflow: hidden;
+  height: 15px;
+  margin: 2px 0;
+  font-size: 12px;
+  line-height: 15px;
+  color: #B24926;
+}
+
+#place-name {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #999991;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.miniature {
+  float: left;
+  width: 150px;
+  height: 100px;
+  padding-right: 20px;
+  text-align: center;
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+//--------------------------------------POP-UP
+
+#dialog {
+  display: none;
+  p {
+    margin: 15px;
+    background-color: #F5F5F5;
+    border: 1px solid #838383;
+    border-radius: 5px;
+    padding: 10px;
+  }
+}
+
+.ui-dialog-content .ui-button.right {
+  float: right;
+  margin-right: 15px;
+}
+
+.ui-dialog {
+  z-index: 550;
+  .ui-dialog-titlebar {
+    padding: 9px 15px;
+  }
+  .ui-dialog-titlebar-close {
+    top: 12px;
+    width: 20px;
+  }
+}
+
+.ui-widget {
+  font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #999991;
+  background: asset_url("transparent-background.png") repeat;
+}
+
+.ui-widget-header {
+  background: transparent;
+  border: 0;
+  font: 18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #FFFAFA;
+}
+
+.ui-widget-content {
+  color: #333333;
+  border-color: #ffffff;
+}
+
+.ui-dialog-content .ui-button, button#change-mode, .btn {
+  padding: 4px 12px;
+  margin: 0;
+  text-align: center;
+  color: #000000;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #DBA62B #805E23 #805E23 #DBA62B;
+  background: rgb(255, 242, 219);
+  /* Old browsers */
+  /*IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: -moz-linear-gradient(-45deg, rgba(255, 242, 219, 1) 0%, rgba(219, 166, 43, 1) 49%, rgba(128, 94, 35, 1) 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, rgba(255, 242, 219, 1)), color-stop(49%, rgba(219, 166, 43, 1)), color-stop(100%, rgba(128, 94, 35, 1)));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(-45deg, rgba(255, 242, 219, 1) 0%, rgba(219, 166, 43, 1) 49%, rgba(128, 94, 35, 1) 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(-45deg, rgba(255, 242, 219, 1) 0%, rgba(219, 166, 43, 1) 49%, rgba(128, 94, 35, 1) 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(-45deg, rgba(255, 242, 219, 1) 0%, rgba(219, 166, 43, 1) 49%, rgba(128, 94, 35, 1) 100%);
+  /* IE10+ */
+  background: linear-gradient(135deg, rgba(255, 242, 219, 1) 0%, rgba(219, 166, 43, 1) 49%, rgba(128, 94, 35, 1) 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff2db', endColorstr='#805e23', GradientType=1);
+  /* IE6-8 fallback on horizontal gradient */
+}
+
+.ui-dialog-titlebar-close {
+  border-radius: 10px;
+}
+
+.ui-widget-overlay {
+  z-index: 14;
+}
+
+.ui-widget input {
+  font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+

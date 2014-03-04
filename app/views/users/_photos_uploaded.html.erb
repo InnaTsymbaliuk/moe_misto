@@ -1,0 +1,15 @@
+<ul>
+  <% @photos_uploaded.each do |photo| %>
+    <li class="user_photo">
+      <div class="miniature">
+        <%= image_tag photo.image_url(:small), id: photo.id %>
+        <span class="delete">
+          <%= link_to 'удалить',
+                          photo_path(photo),
+                          :method => :delete,
+                          :data => { :confirm => 'Вы уверены что хотите удалить фото?' } %>
+        </span>
+      </div>
+    </li>
+  <% end %>
+</ul>

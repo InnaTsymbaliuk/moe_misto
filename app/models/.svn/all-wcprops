@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/source/moe-misto/!svn/ver/356/trunk/app/models
+END
+.gitkeep
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/source/moe-misto/!svn/ver/83/trunk/app/models/.gitkeep
+END
+message.rb
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/source/moe-misto/!svn/ver/303/trunk/app/models/message.rb
+END
+claim.rb
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/source/moe-misto/!svn/ver/303/trunk/app/models/claim.rb
+END
+location.rb
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/source/moe-misto/!svn/ver/303/trunk/app/models/location.rb
+END
+photo.rb
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/source/moe-misto/!svn/ver/346/trunk/app/models/photo.rb
+END
+user.rb
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/source/moe-misto/!svn/ver/356/trunk/app/models/user.rb
+END

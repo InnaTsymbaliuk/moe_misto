@@ -1,0 +1,38 @@
+<ul class="top-list">
+  <li>
+    <h3><%= t('most_active') %></h3>
+    <ul class="top">
+        <% @active_authors.each do |a| %>
+        <li>
+            <div class="img"><%= image_tag(a.avatar_url ? a.avatar_url(:small) : 'avatar.png') %></div>
+            <%= link_to "#{a.first_name} #{a.last_name}", '#', id: a.id %>
+            <%= link_to t('contact_user'), recepient_path(recepient: a.id), method: :post, remote: true, title: t('contact_user'), class: "write" if current_user && a != current_user %>
+        </li>
+        <% end %>
+    </ul>
+  </li>
+  <li>
+    <h3><%= t('last_upload') %></h3>
+    <ul class="top">
+        <% @last_authors.each do |a| %>
+        <li>
+            <div class="img"><%= image_tag(a.avatar_url ? a.avatar_url(:small) : 'avatar.png') %></div>
+            <%= link_to "#{a.first_name} #{a.last_name}", '#', id: a.id %>
+            <%= link_to 'write author', recepient_path(recepient: a.id), method: :post, remote: true, class: "write" if current_user && a != current_user %>
+        </li>
+        <% end %>
+    </ul>
+  </li>
+  <li>
+    <h3><%= t('most_popular') %></h3>
+    <ul class="top">
+        <% @shared_authors.each do |a| %>
+        <li>
+            <div class="img"><%= image_tag(a.avatar_url ? a.avatar_url(:small) : 'avatar.png') %></div>
+            <%= link_to "#{a.first_name} #{a.last_name}", '#', id: a.id %>
+            <%= link_to 'write author', recepient_path(recepient: a.id), method: :post, remote: true, class: "write" if current_user && a != current_user %>
+        </li>
+        <% end %>
+    </ul>
+  </li>
+</ul>

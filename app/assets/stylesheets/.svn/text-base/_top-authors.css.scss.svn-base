@@ -1,0 +1,73 @@
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+  border-radius: $radius;
+}
+
+#top_authors {
+  overflow-x: hidden;
+  color: #FFFFFF;
+  .top-list {
+    position: relative;
+    float: left;
+    left: 50%;
+    height: 100%;
+    &>li {
+      position: relative;
+      float: left;
+      right: 50%;
+      width: 230px;
+      height: 92%;
+      padding: 10px;
+      margin: 5px 10px;
+      border: 1px solid #FFFFFF;
+      @include border-radius(5px);
+      background: #000000;
+      h3 {
+        clear: both;
+        margin: 0 0 5px;
+        background: #000000;
+        border-radius: 5px;
+        text-align: center;
+        line-height: 30px;
+        font-size: 18px;
+      }
+      .top {
+        li{
+          clear: both;
+          line-height: 55px;
+          text-align: left;
+          .img {
+            overflow: hidden;
+            float: left;
+            width: 50px;
+            height: 50px;
+            margin: 0 5px 5px 0;
+            border: 1px solid #FFFFFF;
+            @include border-radius(50px);
+            img{
+              max-height: 100%;
+              max-width: 100%;
+            }
+          }
+          a {
+            color: #FFFFFF;
+            &.write {
+              float: right;
+              display: inline-block;
+              overflow: hidden;
+              width: 14px;
+              height: 14px;
+              margin: 20px 0;
+              background: asset_url('glyphicons-halflings-white.png') no-repeat;
+              background-position: -72px 0;
+              text-indent: -999px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

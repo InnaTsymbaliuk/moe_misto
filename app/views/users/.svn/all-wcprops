@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/source/moe-misto/!svn/ver/356/trunk/app/views/users
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/source/moe-misto/!svn/ver/332/trunk/app/views/users/show.html.erb
+END
+_photos_timeline.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/source/moe-misto/!svn/ver/284/trunk/app/views/users/_photos_timeline.html.erb
+END
+_edit_profile.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/source/moe-misto/!svn/ver/356/trunk/app/views/users/_edit_profile.html.erb
+END
+_user_messages.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/source/moe-misto/!svn/ver/346/trunk/app/views/users/_user_messages.html.erb
+END
+_top_authors.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/source/moe-misto/!svn/ver/346/trunk/app/views/users/_top_authors.html.erb
+END
+_photos_uploaded.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/source/moe-misto/!svn/ver/284/trunk/app/views/users/_photos_uploaded.html.erb
+END
+show.js.erb
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/source/moe-misto/!svn/ver/326/trunk/app/views/users/show.js.erb
+END
+update_password.js.erb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/source/moe-misto/!svn/ver/331/trunk/app/views/users/update_password.js.erb
+END
+_edit_profile_photo.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/source/moe-misto/!svn/ver/341/trunk/app/views/users/_edit_profile_photo.html.erb
+END
+top_authors.js.erb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/source/moe-misto/!svn/ver/273/trunk/app/views/users/top_authors.js.erb
+END

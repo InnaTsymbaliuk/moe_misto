@@ -1,0 +1,31 @@
+<div id="uploadPhoto">
+  <div id="uploadClose">close</div>
+    <h3></h3>
+    <%= form_for @location do |f| %>
+      <%= f.hidden_field :name, value: 'name' %>
+      <%= f.hidden_field :latitude, value: 49.4337 %>
+      <%= f.hidden_field :longitude, value: 32.0665 %>
+      <%= f.fields_for :photos do |photo_form| %>
+        <ul id="photo-list">
+          <li id="imageRow0" class="imageRow">
+            <fieldset>
+              <div id="miniature" class="miniature"></div>
+              <div class="input_image_container" id="input_image_container">
+                  <div class="add"><%= t('add_photo') %></div>
+                  <%= photo_form.file_field :image , class: 'input_image', accept: 'image/png, image/jpeg, image/jpg' %>
+              </div>
+              <%= photo_form.label :photo_date, class: 'label_date' %>
+              <%= photo_form.text_field :photo_date, class: 'input_date daterange required' %>
+              <div id="date-error" class="errorDate error"></div>
+              <div id="delete-image">Delete</div>
+            </fieldset>
+          </li>
+        </ul>
+        <ul class="btn-group">
+          <li class="upload">
+            <%= f.submit t('upload'), id: 'submitButton' %>
+          </li>
+        </ul>
+      <% end %>
+    <% end %>
+</div>

@@ -1,0 +1,146 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  uk: "uk"
+  ru: "ru"
+  en: "en"
+  map: Map
+  log_out: "Log out"
+  log_in: "Log in"
+  sign_in: "Sign in"
+  sign_up: "Sign up"
+  top_authors: "Top authors"
+  about_us: "About us"
+  feedback: "Feedback"
+  forgot_password: "Forgot password?"
+  password: "Password"
+
+  confirmation_instructions: "Didn't receive confirmation instructions?"
+  unlock_instructions: "Didn't receive unlock instructions?"
+  reset_password: "Enter your email so we can send reset password instructions."
+  resend_confirmation: "Enter your email so we can resend confirmation instructions."
+
+  resend: "Resend"
+  show_history: "Show history"
+  change_password: "Change your password"
+  new_password: "New password"
+  confirm_new_password: "Confirm new password"
+  change_my_password: "Change my password"
+  log_in_with: "Log in with"
+
+  sign_up_with: "Sign up with"
+  ordinary_sign_up: "Ordinary sign up"
+  male: "male"
+  female: "female"
+
+  upload_photo: "Upload photo"
+  create_report: "Create report"
+  add_photo: "Add photo"
+  upload: "Upload"
+
+  admin_photos: "Photos"
+  edit_photo: "Edit photo"
+  confirm_photo: "Confirm photo"
+  delete_photo: "Delete photo"
+  select_all: "All"
+  date: "Date"
+  author: "Author"
+  status: "Status"
+  last_month: "Last month"
+  last_week: "Last week"
+  last_day: "Last day"
+  place: "Place"
+  save: "Save"
+  cancel: "Cancel"
+  admin_users: "Users"
+  name: "Name"
+  surname: "Surname"
+  date_of_birth: "Date of birth"
+  reg_date: "Registration date"
+  gender: "Gender"
+  photo: "Photo"
+  complaints: "Complaints"
+  number_of_photos: "Number of photos"
+  block_upload: "Block upload photos"
+  unblock_upload: "Unblock upload photos"
+  delete_user: "Delete user"
+  contact_user: "Contact user"
+
+  uploaded_photo: "Uploaded photo"
+  confirmed_photo: "Confirmed photo"
+  messages: "Messages"
+  edit_profile: "Edit profile"
+
+  most_active: "Most active"
+  last_upload: "Last upload"
+  most_popular: "Most popular"
+
+  send: "Send"
+
+  nick_info: "Help info"
+
+  author_search: "Author search"
+  find: "Find"
+  admin_rights: "Give admin rights"
+  not_admin_rights: "Remove admin rights"
+
+  edit_password: "Edit password"
+
+
+
+controllers:
+    application:
+      auth_user: "You need to register or login."
+      admin_user: "You are not an administrator!"
+      block_upload: "Ability to download photos blocked by the administrator."
+    locations:
+      create_photo: "Added %{photo_count} photo."
+      not_create_photo: "Error. Photo not added."
+    messages:
+      create_message: "Message sent."
+      not_create_message: "Error. Message not sent."
+      destroy_message: "Message deleted."
+      not_destroy_message: "You are not message owner!"
+    photos:
+      destroy_photo: "Photo deleted."
+      not_destroy_photo: "You are not photo owner!"
+    users:
+      not_show_profile: "You do not have permission to access this page."
+      update_profile: "Profile successfully updated."
+      not_update_profile: "Error."
+    admin_photos:
+      update_photo: "Photo updated successfully."
+      chooses_photo: "Choose photo!"
+      approved_photo: "Photo successfully confirmed."
+      destroy_photo: "Photo deleted."
+      select_action: "Select one action."
+    admin_users:
+      chooses_user: "Choose user!"
+      not_upload_photo: "Ability to add photos blocked."
+      upload_photo: 'Ability to add photos unlocked.'
+      destroy_users: "Users deleted."
+      role_admin: "Provided administrative privileges"
+      not_role_admin: "Provided administrative canceled"
+      select_action: "Select one action."
+
+
+

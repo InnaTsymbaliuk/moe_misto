@@ -1,0 +1,77 @@
+10
+
+dir
+356
+https://moemisto.slsapp.com/source/moe-misto/trunk/test
+https://moemisto.slsapp.com/source/moe-misto
+
+
+
+2013-12-20T22:24:43.012616Z
+83
+rozhnov.vladimir@gmail.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+aaf61abf-4201-0010-a969-0b5422c2fa0a
+
+fixtures
+dir
+
+unit
+dir
+
+test_helper.rb
+file
+
+
+
+
+2014-01-17T19:11:24.703197Z
+610ae0e350f993293bf3913b34b97d3d
+2013-12-05T23:43:52.865169Z
+11
+rozhnov.vladimir@gmail.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+492
+
+performance
+dir
+
+functional
+dir
+
+integration
+dir
+

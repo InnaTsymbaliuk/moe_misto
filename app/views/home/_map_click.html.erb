@@ -1,0 +1,19 @@
+<div id="click-on-map" class="top-left">
+  <h2 id="place-name">Назва місця</h2>
+  <ul>
+    <li class="show">
+      <%= form_tag('/history', remote: true) do %>
+        <%= hidden_field_tag(:lat) %>
+        <%= hidden_field_tag(:lon) %>
+        <%= hidden_field_tag(:radius) %>
+        <%= submit_tag( t('show_history') ) %>
+      <% end %>
+    </li>
+    <li class="create"><a href="javascript:void(0);"><%= t('create_report') %></a></li>
+    <% if user_signed_in? %>
+      <li class="upload">
+        <div id="imageUpload" class="btnName"><%= t('upload_photo') %></div>
+      </li>
+    <% end %>
+  </ul>
+</div>

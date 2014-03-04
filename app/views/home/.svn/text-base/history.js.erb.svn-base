@@ -1,0 +1,27 @@
+jQuery(function(){
+$(".photos").html("<%= j render('timeline') %>");
+
+$(".currentPhoto").html("<%= j render('show_photo') %>");
+
+popUpHider('timeline');
+hideButtonForChangeMode(true);
+
+$('.complain').click(function(){
+    $('.complain-menu').toggleClass('hide');
+});
+
+$('#timeLineClose').click(function(){
+    popUpHider('all');
+    hideButtonForChangeMode(false);
+});
+
+$('#emptyList').click(function(){
+    popUpHider('all');
+    hideButtonForChangeMode(true);
+});
+
+$(".photos").show(function(){
+  var instanceOne = new ImageFlow();
+  instanceOne.init({ ImageFlowID:'myImageFlow', imageFocusM: 1.5 });
+});
+});

@@ -1,0 +1,28 @@
+<div class="edit_photo">
+  <h2 class="admin_title"><%= t('edit_photo') %></h2>
+  <%= form_for @photo, url: {controller: "photos", action: "update"} do |f| %>
+  <ul class="info">
+      <li class="author"><%= t('author') %>: <%= "#{@photo.user.first_name} #{@photo.user.last_name}" %></li>
+      <li><%= hidden_field_tag :latitude, @photo.location.latitude %></li>
+      <li><%= hidden_field_tag :longitude, @photo.location.longitude %></li>
+      <li><%= hidden_field_tag :name, @photo.location.name %></li>
+      <li class="date"><%= t('date') %>: <%= text_field_tag :photo_date, @photo.photo_date.strftime("%d-%m-%Y"), class: 'input_date daterange required' %></li>
+      <li id="place-name"><%= t('place') %>: <%= @photo.location.address %></li>
+      <li class="btn-group">
+          <ul>
+              <li><%= f.submit t('save'), class: 'btn' %></li>
+              <li class="cancel"><%= link_to t('cancel'), admin_photos_path, class: 'btn' %></li>
+          </ul>
+      </li>
+  </ul>
+  <div class="miniature">
+    <%= image_tag @photo.image_url(:large) %>
+  </div>
+  <div id="edit-photo-map">Карта</div>
+  <% end %>
+  <script>
+    setTimeout(function(){
+        mapEditInit()
+    }, 500);
+  </script>
+</div>

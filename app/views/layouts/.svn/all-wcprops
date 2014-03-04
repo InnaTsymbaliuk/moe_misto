@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/source/moe-misto/!svn/ver/356/trunk/app/views/layouts
+END
+_header.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/source/moe-misto/!svn/ver/355/trunk/app/views/layouts/_header.html.erb
+END
+_footer.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/source/moe-misto/!svn/ver/356/trunk/app/views/layouts/_footer.html.erb
+END
+application.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/source/moe-misto/!svn/ver/322/trunk/app/views/layouts/application.html.erb
+END

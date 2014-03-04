@@ -1,0 +1,121 @@
+ru:
+  uk: "uk"
+  ru: "ru"
+  en: "en"
+  map: "Карта"
+  log_out: "Выход"
+  log_in: "Вход"
+  sign_in: "Авторизация"
+  sign_up: "Регистрация"
+  top_authors: "Рейтинг авторов"
+  about_us: "О нас"
+  feedback: "Обратная связь"
+  forgot_password: "Забыли пароль?"
+  password: "Пароль"
+
+  confirmation_instructions: "Не получили письмо с подтверждением?"
+  unlock_instructions: "Не получили инструкции разблокировки?"
+  reset_password: "Введите свой email, чтобы мы могли отправить инструкции сброса пароля."
+  resend_confirmation: "Введите свой email, чтобы мы могли отослать письмо с подтверждением."
+
+  resend: "Отправить"
+  show_history: "Показать историю"
+  change_password: "Изменить пароль"
+  new_password: "Новый пароль"
+  confirm_new_password: "Подтверждение нового пароля"
+  change_my_password: "Изменить мой пароль"
+  log_in_with: "Вход через"
+
+  sign_up_with: "Регистрация с помощью"
+  ordinary_sign_up: "Обычная регистрация"
+  male: "мужской"
+  female: "женский"
+
+  upload_photo: "Загрузить фото"
+  create_report: "Создать отчет"
+  add_photo: "Добавить фото"
+  upload: "Загрузить"
+
+  admin_photos: "Фото"
+  edit_photo: "Редактировать фото"
+  confirm_photo: "Подтвердить фото"
+  delete_photo: "Удалить фото"
+  select_all: "Все"
+  date: "Дата"
+  author: "Автор"
+  status: "Статус"
+  last_month: "Последний месяц"
+  last_week: "Последняя неделя"
+  last_day: "Последний день"
+  place: "Место"
+  save: "Сохранить"
+  cancel: "Отменить"
+  admin_users: "Пользователи"
+  name: "Имя"
+  surname: "Фамилия"
+  date_of_birth: "Дата рождения"
+  reg_date: "Дата регистрации"
+  gender: "Пол"
+  photo: "Фото"
+  complaints: "Кол. жалоб"
+  number_of_photos: "Кол. фото"
+  block_upload: "Заблокировать загрузку фото"
+  unblock_upload: "Разблокировать загрузку фото"
+  delete_user: "Удалить пользователя"
+  contact_user: "Написать пользователю"
+
+  uploaded_photo: "Загруженные фото"
+  confirmed_photo: "Подтвержденные фото"
+  messages: "Сообщения"
+  edit_profile: "Редактировать профиль"
+
+  most_active: "Самые активные"
+  last_upload: "Последние"
+  most_popular: "Самые популярные"
+
+  send: "Отправить"
+
+  nick_info: "Help info"
+
+  author_search: "Поиск автора"
+  find: "Найти"
+  admin_rights: "Предоставить права админа"
+  not_admin_rights: "Снять права админа"
+
+  edit_password: "Редактировать пароль"
+
+
+  controllers:
+    application:
+      auth_user: "Вы должны зарегистрироваться или войти."
+      admin_user: "Вы не администратор!"
+      block_upload: "Возможность загрузки фото заблокирована администратором."
+    locations:
+      create_photo: "Добавлено %{photo_count} фото."
+      not_create_photo: "Ошибка. Фото не добавлено."
+    messages:
+      create_message: "Сообщение отправлено."
+      not_create_message: "Ошибка. Сообщение не отправлено."
+      destroy_message: "Сообщение удалено."
+      not_destroy_message: "Вы не владелец сообщения!"
+    photos:
+      destroy_photo: "Фото удалено."
+      not_destroy_photo: "Вы не владелец фото!"
+    users:
+      not_show_profile: "У вас нет доступа к этой странице."
+      update_profile: "Профиль успешно обновлено."
+      not_update_profile: "Ошибка."
+    admin_photos:
+      update_photo: "Фото успешно обновлена."
+      chooses_photo: "Выберите фото!"
+      approved_photo: "Фото успешно подтверждены."
+      destroy_photo: "Фото удалено."
+      select_action: "Выберите действие."
+    admin_users:
+      chooses_user: "Выберите пользователя!"
+      not_upload_photo: 'Возможность добавлять фото заблокирована.'
+      upload_photo: 'Возможность добавлять фото разблокирована.'
+      destroy_users: "Пользователи удалены."
+      role_admin: "Права администратора предоставлено."
+      not_role_admin: "Права администратора снято."
+      select_action: "Выберите действие."

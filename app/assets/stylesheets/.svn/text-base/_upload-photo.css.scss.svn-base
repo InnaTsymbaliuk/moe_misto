@@ -1,0 +1,128 @@
+//-------------------------Upload photo popup
+#uploadPhoto {
+  position: absolute;
+  z-index: 20;
+  top: 50%;
+  left: 50%;
+  width: 380px;
+  padding: 10px 10px 0;
+  margin: -175px 0 0 -201px;
+  background: #ffffff;
+  border: 1px solid #999991;
+  color: #000;
+  #uploadClose{
+    position: relative;
+    overflow: hidden;
+    height: 15px;
+    width: 15px;
+    float: right;
+    cursor: pointer;
+    text-indent: -9999px;
+    background: asset_url("close_2852.png") no-repeat -5px -5px;
+  }
+  h3 {
+    padding-bottom: 10px;
+    text-align: center;
+    border-bottom: 1px solid #999991;
+    font: 20px "Helvetica Neue",Helvetica,Arial, sans-serif;
+  }
+  #photo-list{
+    overflow: auto;
+    max-height: 242px;
+    .imageRow {
+      border-bottom: 1px solid #999991;
+      min-height: 39px;
+      fieldset {
+        overflow: hidden;
+        padding: 10px 5px;
+
+        .input_image_container{
+          position: absolute;
+          bottom: 8px;
+          height: 30px;
+          .add {
+            overflow: hidden;
+            width: 150px;
+            text-align: center;
+            border: 1px solid #999991;
+            border-radius: 5px;
+            background-color: #ffffff;
+            font-size: 14px;
+            line-height: 28px;
+          }
+          .input_image{
+            position: relative;
+            bottom: 30px;
+            filter: alpha(opacity=0);
+            width: 152px;
+            height: 30px;
+            opacity: 0;
+            overflow: hidden;
+            font-size: 0;
+            cursor: pointer;
+          }
+        }
+        .input_date {
+          width: 50%;
+          height: 20px;
+        }
+        .errorDate {
+          overflow: hidden;
+          label.error {
+            height: auto;
+          }
+        }
+      }
+      .error {
+        margin: 0;
+      }
+      #delete-image{
+        float: right;
+        overflow: hidden;
+        height: 15px;
+        width: 20px;
+        padding-right: 12px;
+        margin-top: 25px;
+        text-indent: -9999px;
+        cursor: pointer;
+        background: asset_url('glyphicons-halflings.png') no-repeat;
+        background-position: -453px 0;
+        color: #DBA62B;
+      }
+    }
+  }
+  .btn-group {
+    text-align: center;
+    li{
+      display: inline-block;
+      overflow: hidden;
+      &.upload {
+        float: right;
+        padding-right: 5px;
+        input{
+          overflow: hidden;
+          height: 30px;
+          width: 150px;
+          margin: 8px 0;
+          text-align: center;
+          border: 1px solid #999991;
+          border-radius: 5px;
+          background-color: #ffffff;
+          font-size: 14px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+}
+@media (max-height: 500px){
+  #uploadPhoto {
+    top: 0;
+    margin-top: 0;
+  }
+}
+
+
+
+

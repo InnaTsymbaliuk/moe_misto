@@ -1,0 +1,84 @@
+<div class="admin_photo">
+  <h2 class="admin_title">Фото</h2>
+
+  <%= form_tag("/admin/approved_destroy", method: "post") do %>
+
+    <div class="admin_sidebar">
+      <ul>
+        <li>
+          <%= radio_button_tag(:approved_delete, "approved") %>
+          <%= label_tag(:approved_delete, "Підтвердити фото") %>
+        </li>
+        <li>
+          <%= radio_button_tag(:approved_delete, "delete") %>
+          <%= label_tag(:approved_delete, "Видалити фото") %>
+        </li>
+      </ul>
+      <%= submit_tag("Ok", class: 'btn') %>
+    </div>
+
+    <div class="admin_content">
+      <ul class="sort">
+        <li>Дата: (<%= link_to 'Sort_up', admin_photos_path(date: 'asc'), class: 'sort_up' %>) (<%= link_to 'Sort_down', admin_photos_path(date: 'desc'), class: 'sort_down' %>)</li>
+        <li>Автор: (<%= link_to 'Sort_up', admin_photos_path(autor: 'asc'), class: 'sort_up' %>) (<%= link_to 'Sort_down', admin_photos_path(autor: 'desc'), class: 'sort_down' %>)</li>
+        <li>Статус: (<%= link_to 'Sort_up', admin_photos_path(status: 'asc'), class: 'sort_up' %>) (<%= link_to 'Sort_down', admin_photos_path(status: 'desc'), class: 'sort_down' %>)</li>
+        <li><%= link_to 'Останній місяць', admin_photos_path(last_mounth: true) %></li>
+        <li><%= link_to 'Остання неділя', admin_photos_path(last_week: true) %></li>
+        <li><%= link_to 'Останній день', admin_photos_path(last_day: true) %></li>
+      </ul>
+
+<<<<<<< .mine
+  <div class="admin_content">
+    <%= render @photos %>
+  </div>
+</div>
+=======
+      <div class="photo_list">
+        <% @photos.each do |photo| %>
+        <div class="photo_block <%= 'not_approved' if photo.approved == false %>">
+          <div class="miniature"><%= image_tag photo.image_url(:small) %></div>
+          <ul class="admin_edit">
+            <li class="checkbox"><%= check_box_tag "photo_id_#{photo.id}", "#{photo.id}" %></li>
+            <li class="edit_image"><%= link_to 'Edit_image', edit_admin_photo_path(photo), title: "Edit" %></li>
+            <li class="letter"><%= link_to 'Написати автору', '#', title: "Write to author" %></li>
+          </ul>
+          <ul class="info">
+            <li>Author</li>
+            <li>Date</li>
+            <li><%= photo.location.address %></li>
+          </ul>
+        </div>
+        <% end %>
+      </div>
+    </div>
+>>>>>>> .r243
+
+<<<<<<< .mine
+<%= will_paginate @photos %>
+
+
+
+<!-- TODO: refactor this -->
+<script type="text/javascript">
+    $(function() {
+      if ($('.pagination').length) {
+        $('#container').scroll(function() {
+          var url;
+          url = $('.pagination .next_page').attr('href');
+          if (url && $(window).scrollTop() > $(document).height() - $(window).height() - 50) {
+            $('.pagination').text("Fetching more photos...");
+            return $.getScript(url);
+          }
+        });
+        return $(window).scroll();
+      }
+    });
+</script>
+<style type="text/css">
+.pagination {
+    display: none;
+}
+</style>=======
+  <% end %>
+</div>
+>>>>>>> .r243

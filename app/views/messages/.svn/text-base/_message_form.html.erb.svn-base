@@ -1,0 +1,16 @@
+<%= form_for @message do |f| %>
+  <div class="header">
+    <div class="img"><%= image_tag(@message.recepient.avatar_url ? @message.recepient.avatar_url(:small) : 'avatar.png') %></div>
+    <h3><%= @message.recepient.first_name %> <%= @message.recepient.last_name %></h3>
+    <%= f.hidden_field :recepient_id %>
+  </div>
+  <div class="content">
+    <%= f.text_area :message_text %>
+  </div>
+  <div class="footer">
+    <ul>
+      <li><%= f.submit t('send'), class: 'btn' %></li>
+      <li class="btn" id="message-close"><%= link_to t('cancel'), '#' %></li> <!-- Cancel button -->
+    </ul>
+  </div>
+<% end %>

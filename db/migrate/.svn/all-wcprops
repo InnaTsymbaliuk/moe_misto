@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/source/moe-misto/!svn/ver/346/trunk/db/migrate
+END
+20131215170104_add_location_ref_to_photos.rb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/source/moe-misto/!svn/ver/83/trunk/db/migrate/20131215170104_add_location_ref_to_photos.rb
+END
+20140131231156_add_upload_photo_to_users.rb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/source/moe-misto/!svn/ver/215/trunk/db/migrate/20140131231156_add_upload_photo_to_users.rb
+END
+20140211225018_add_avatar_to_users.rb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/source/moe-misto/!svn/ver/249/trunk/db/migrate/20140211225018_add_avatar_to_users.rb
+END
+20131215165933_remove_columns_in_photos.rb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/source/moe-misto/!svn/ver/83/trunk/db/migrate/20131215165933_remove_columns_in_photos.rb
+END
+20131215170031_create_locations.rb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/source/moe-misto/!svn/ver/83/trunk/db/migrate/20131215170031_create_locations.rb
+END
+20140103183006_add_confirmable_to_users.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/source/moe-misto/!svn/ver/122/trunk/db/migrate/20140103183006_add_confirmable_to_users.rb
+END
+20131214080216_create_photos.rb
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/source/moe-misto/!svn/ver/83/trunk/db/migrate/20131214080216_create_photos.rb
+END
+20131214080249_create_claims.rb
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/source/moe-misto/!svn/ver/83/trunk/db/migrate/20131214080249_create_claims.rb
+END
+20140301161248_chage_default_in_message_read.rb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/source/moe-misto/!svn/ver/346/trunk/db/migrate/20140301161248_chage_default_in_message_read.rb
+END
+20131229170313_add_omniauth_to_users.rb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/source/moe-misto/!svn/ver/116/trunk/db/migrate/20131229170313_add_omniauth_to_users.rb
+END
+20131214080028_devise_create_users.rb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/source/moe-misto/!svn/ver/83/trunk/db/migrate/20131214080028_devise_create_users.rb
+END
+20131214084011_add_image_to_photos.rb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/source/moe-misto/!svn/ver/83/trunk/db/migrate/20131214084011_add_image_to_photos.rb
+END
+20140125220303_change_default_in_photos_approved.rb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/source/moe-misto/!svn/ver/199/trunk/db/migrate/20140125220303_change_default_in_photos_approved.rb
+END
+20131214080302_create_messages.rb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/source/moe-misto/!svn/ver/83/trunk/db/migrate/20131214080302_create_messages.rb
+END

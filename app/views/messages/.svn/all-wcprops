@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/source/moe-misto/!svn/ver/346/trunk/app/views/messages
+END
+_message.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/source/moe-misto/!svn/ver/346/trunk/app/views/messages/_message.html.erb
+END
+_message_form.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/source/moe-misto/!svn/ver/339/trunk/app/views/messages/_message_form.html.erb
+END
+recepient.js.erb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/source/moe-misto/!svn/ver/339/trunk/app/views/messages/recepient.js.erb
+END
+show.js.erb
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/source/moe-misto/!svn/ver/346/trunk/app/views/messages/show.js.erb
+END

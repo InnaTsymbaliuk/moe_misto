@@ -1,0 +1,25 @@
+<ul id="user_messages">
+  <li class="message_block">
+    <div class="img"><%= image_tag @message.sender.avatar_url(:small) %></div>
+    <div class="message_header">
+        <h4><%= @message.sender.first_name %> <%= @message.sender.last_name %></h4>
+        <span class="message_date"><%= @message.created_at.strftime("%d.%m.%Y") %></span>
+    </div>
+    <div style="padding: 25px 0 5px 50px;"><%= @message.message_text %></div>
+  </li>
+</ul>
+<% if params[:inbox] == 'true' %>
+  <div class="answer_form">
+    <%= form_for Message.new do |f| %>
+      <%= f.hidden_field :recepient_id, value: @message.sender.id %>
+      <div class="content">
+        <%= f.text_area :message_text %>
+      </div>
+      <div class="footer">
+        <ul>
+          <li><%= f.submit t('send'), class: 'btn' %></li>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+<% end %>

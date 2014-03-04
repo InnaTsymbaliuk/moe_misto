@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MoeMisto</title>
+  <%= stylesheet_link_tag "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
+  <script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=drawing,places,geometry"></script> #TODO
+  <script src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerwithlabel/1.1.8/src/markerwithlabel_packed.js"></script>
+  <!--[if lt IE 9]>
+  <script>
+  document.createElement('header');
+  document.createElement('nav');
+  document.createElement('section');
+  document.createElement('article');
+  document.createElement('aside');
+  document.createElement('footer');
+  document.createElement('hgroup');
+  </script>
+  <![endif]-->
+  <%= csrf_meta_tags %>
+  <noscript>
+    <meta http-equiv="refresh" content="1;url=no_js.html">
+  </noscript>
+</head>
+<body>
+<div id="wrapper">
+  <%= render 'layouts/header' %>
+  <div id="<%= 'container' unless controller_name == 'home' %>">
+    <%= yield %>
+  </div>
+  <%= render 'layouts/footer' %>
+  <div id="message_popup" title="Message"></div>
+</div>
+
+<% if flash.present? %>
+  <div id="flash"></div>
+<% end %>
+<% if resource.errors.full_messages.present? %>
+  <div id="error_resource"></div>
+<% end %>
+<script>
+  var type_message;
+  <% flash.each do |key, value| %>
+    type_message = '<%= flash_message(key) %>'
+    $('#flash').toastmessage('showToast',{
+      text     : '<%= value %>',
+      sticky   : false,
+      position : 'middle-center',
+      type     : type_message
+    });
+  <% end %>
+  <% if resource.errors.full_messages.present? %>
+    $('#error_resource').toastmessage('showToast',{
+      text     : '<%= resource.errors.full_messages.join('. ') %>',
+      sticky   : true,
+      position : 'middle-center',
+      type     : 'error'
+    });
+  <% end %>
+</script>
+</body>
+</html>

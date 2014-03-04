@@ -1,0 +1,98 @@
+// ------------------------------------------------Map-click pop-up
+#click-on-map {
+  position: absolute;
+  z-index: 14;
+  padding: 10px 10px 5px;
+  background: #ffffff;
+  border: 1px solid #999991;
+  color: #000;
+  text-align: center;
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    border: 3px solid #FF0000;
+    border-radius: 3px;
+  }
+  &.top-left {
+    border-radius: 0 15px 15px;
+    &:before {
+      top: -4px;
+      left: -4px;
+    }
+  }
+  &.top-right {
+    border-radius: 15px 0 15px 15px;
+    &:before {
+      top: -4px;
+      right: -4px;
+    }
+  }
+  &.bottom-right {
+    border-radius: 15px 15px 0;
+    &:before {
+      bottom: -4px;
+      right: -4px;
+    }
+  }
+  &.bottom-left {
+    border-radius: 15px 15px 15px 0;
+    &:before {
+      bottom: -4px;
+      left: -4px;
+    }
+  }
+
+  ul {
+    position: relative;
+    float: left;
+    left: 50%;
+    li {
+      position: relative;
+      float: left;
+      right: 50%;
+      width: 75px;
+      height: 95px;
+      overflow: hidden;
+      padding: 5px;
+      margin: 10px 0 0;
+      border: 1px solid #ffffff;
+      border-radius: 5px;
+      font-size: 12px;
+      &.show {
+        background: asset_url("show.png") no-repeat 27px 10px;
+        input[type="submit"] {
+          padding-top: 60px;
+          white-space: normal;
+          background-color: transparent;
+          border: 0 none;
+          font-size: 12px;
+        }
+      }
+      &.create {
+        background: asset_url("create.png") no-repeat 25px 10px;
+        a {
+          display: block;
+          height: 100%;
+          padding-top: 60px;
+          font-size: 12px;
+          color: #000;
+        }
+      }
+      &.upload {
+        position: relative;
+        overflow: hidden;
+        background: asset_url("upload.png") no-repeat 22px 10px;
+        cursor: pointer;
+        .btnName {
+          height: 100%;
+          padding-top: 60px;
+        }
+      }
+      &:hover {
+        background-color: #E8E8E8;
+        border-color: #DCDCDC;
+      }
+    }
+  }
+}

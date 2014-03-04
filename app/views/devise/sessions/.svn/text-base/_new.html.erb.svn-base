@@ -1,0 +1,47 @@
+<div id="authorization-menu" title=<%= t('sign_in') %>>
+  <ul>
+    <li>
+      <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+        <ul>
+          <li><%= f.label :email %></li>
+          <li>
+            <%= f.email_field :email, id: 'user-name' %>
+            <!-- TODO check this:  name: 'user-name' -->
+            <div id="user-name-error" class="error"></div>
+          </li>
+          <li><%= f.label :password %></li>
+          <li>
+            <%= f.password_field :password, id: 'user-pass' %>
+            <!-- TODO check this:  name: 'user-pass' -->
+            <div id="user-pass-error" class="error"></div>
+          </li>
+          <li class="forgot">
+            <% if devise_mapping.recoverable? %>
+              <%= link_to t('forgot_password'), new_password_path(resource_name) %>
+            <% end %>
+          </li>
+          <li class="remember">
+              <% if devise_mapping.rememberable? %>
+                <%= f.check_box :remember_me %> <%= f.label :remember_me %>
+              <% end %>
+          </li>
+          <li class="button">
+            <%= f.submit t('log_in'), class: 'ui-button', id: "logIn_button"%>
+          </li>
+        </ul>
+      <% end %>
+    </li>
+    <li class="social-links">
+      <h4><%= t('log_in_with') %></h4>
+      <ul>
+        <li class="vk"><%= link_to 'Vkontakte', user_omniauth_authorize_path(:vkontakte) %></li>
+        <li class="fb"><%= link_to 'Facebook', user_omniauth_authorize_path(:facebook) %></li>
+      </ul>
+    </li>
+    <li class="button">
+      <% if devise_mapping.registerable? %>
+        <%= link_to t('sign_up'), new_registration_path(resource_name), class: "ui-button" %>
+      <% end %>
+    </li>
+  </ul>
+</div>

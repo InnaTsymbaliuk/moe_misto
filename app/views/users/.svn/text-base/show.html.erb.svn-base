@@ -1,0 +1,27 @@
+<div id="user_account">
+  <div id="sidebar">
+    <div class="profile_photo">
+      <%= image_tag (@user.avatar_url ? @user.avatar_url(:large) : 'avatar.png') %>
+      <span class="edit"><%= link_to 'edit profile photo', profilePhoto: true, remote: true %></span>
+    </div>
+    <h3><%= @user.first_name %> <%= @user.last_name %></h3>
+    <ul class="user_tab">
+      <li class="confirmed_photo active"><%= link_to t('confirmed_photo'), timeline: true, remote: true %></li>
+      <li class="uploaded_photo"><%= link_to t('uploaded_photo'), uploaded: true, remote: true %></li>
+      <li class="user_message"><%= link_to t('messages'), messages: true, remote: true %></li>
+      <li class="edit_profile"><%= link_to t('edit_profile'), profile: true, remote: true %></li>
+    </ul>
+  </div>
+  <div id="user_tab_content">
+    <%= render 'photos_timeline' %>
+  </div>
+</div>
+<div id='dialog-content'>
+    <div class="photo">
+        <img id='dialog-photo' src="">
+    </div>
+    <div id='dialog-data'></div>
+</div>
+<script>
+    manageUsersPage();
+</script>

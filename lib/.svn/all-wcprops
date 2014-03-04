@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/source/moe-misto/!svn/ver/263/trunk/lib
+END
+std_out_logger.rb
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/source/moe-misto/!svn/ver/263/trunk/lib/std_out_logger.rb
+END
+custom_failure.rb
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/source/moe-misto/!svn/ver/205/trunk/lib/custom_failure.rb
+END

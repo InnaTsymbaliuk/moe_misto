@@ -1,0 +1,167 @@
+//mixins
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+  border-radius: $radius;
+}
+
+// ----------------------------------------------AUTHORIZATION
+#authorization-menu {
+  display: none;
+  color: #ffffff;
+  li {
+    ul {
+      li{
+        .error {
+          text-align: right;
+        }
+        #user-name, #user-pass {
+          width: 237px;
+          height: 20px;
+          border-width: 0;
+        }
+        &.remember{
+          overflow: hidden;
+          label {
+            cursor: pointer;
+          }
+        }
+        &.forgot {
+          float: right;
+          a {
+            color: #ffffff;
+            &:hover{
+              text-decoration: underline;
+            }
+          }
+        }
+        &.button {
+          .ui-button {
+            height: 30px;
+            padding: 0;
+            width: 100%;
+          }
+        }
+      }
+    }
+    &.button {
+      padding: 10px 0 5px;
+      text-align: center;
+      .ui-button {
+        width: 235px;
+        padding: 4px 0;
+      }
+    }
+  }
+}
+
+//-----------------------------------------------------REGISTRATION
+#registration-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 340px;
+  margin: -315px 0 0 -170px;
+  fieldset {
+    padding: 10px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    background: asset_url("transparent-background.png") repeat;
+    dt {
+      float: left;
+      clear: left;
+      width: 140px;
+      height: 40px;
+      &.gender {
+        height: 50px;
+      }
+      &#captcha {
+        clear: both;
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+      }
+      &.submit {
+        clear: both;
+        width: 100%;
+        height: auto;
+        input.btn {
+          display: block;
+          width: 200px;
+          height: 30px;
+          margin: 0 auto;
+          font-size: 14px;
+        }
+      }
+      &.info {
+        float: none;
+        width: auto;
+        height: auto;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+    }
+    dd {
+      position: relative;
+      float: right;
+      input {
+        width: 145px;
+      }
+      &.gender {
+        width: 145px;
+        input {
+          width: 15px;
+        }
+      }
+      .help-info {
+        display: none;
+        position: absolute;
+        top: 1px;
+        right: -172px;
+        width: 150px;
+        height: 50px;
+        padding: 0 5px;
+        background: #000000;
+        border: 1px solid #FFFFFF;
+        @include border-radius(0 5px 5px 0);
+        &:before {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 4px;
+          left: -10px;
+          border-color: transparent #FFFFFF;
+          border-style: solid;
+          border-width: 5px 10px 5px 0;
+        }
+      }
+      &:hover {
+        .help-info {
+          display: block;
+        }
+      }
+    }
+  }
+  .links {
+    display: block;
+    margin: 5px;
+    color: #ffffff;
+    text-align: center;
+    &:link, &:visited {
+      text-decoration: underline;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+// Fix registration-container position on small screen
+@media (max-height: 740px) {
+  #registration-container {
+    width: 340px;
+    margin: 10px auto;
+    position: static;
+  }
+}

@@ -1,0 +1,279 @@
+// variables
+$background: asset_url("transparent-background.png") repeat;
+
+//mixins
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin box-sizing($box-type) {
+  box-sizing: $box-type;
+  -moz-box-sizing: $box-type;
+  -webkit-box-sizing: $box-type;
+}
+
+//extended classes
+.sort-class {
+  display: inline-block;
+  width: 12px;
+  height: 13px;
+  @extend .icon;
+}
+.sidebar {
+  float: right;
+  padding: 10px;
+  margin: 0 5px;
+  border: 1px solid #fff;
+  @include border-radius(5px);
+  background: $background;
+
+  input[type=submit] {
+    margin-top: 10px;
+    font-size: 14px;
+    width: 100%;
+  }
+}
+.edit-icon {
+  float: left;
+  height: 18px;
+  width: 20px;
+}
+.icon {
+  overflow: hidden;
+  background: asset_url('glyphicons-halflings-white.png') no-repeat;
+  text-indent: -999px;
+}
+
+//     ADMIN
+h2.admin_title {
+  text-align: center;
+  padding: 10px 0;
+}
+.sort_up {
+  @extend .sort-class;
+  background-position: -290px -96px;
+}
+.sort_down {
+  @extend .sort-class;
+  background-position: -312px -96px;
+}
+
+//    ADMIN PHOTO
+.admin_photo {
+  .admin_sidebar {
+    @extend .sidebar;
+    width: 200px;
+  }
+
+  .admin_content {
+    overflow: hidden;
+    margin: 0 10px;
+
+    .sort {
+      padding: 5px;
+      margin-bottom: 5px;
+      background: $background;
+      text-align: center;
+
+      li {
+        display: inline-block;
+        padding: 5px 10px;
+        color: #fff;
+      }
+    }
+    .photo_block {
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+      width: 180px;
+      margin: 5px;
+      padding: 5px 5px 30px;
+      border: 1px solid #000;
+      background: $background;
+
+      .miniature {
+        float: right;
+        padding: 5px;
+      }
+      input[type=checkbox]  {
+        overflow: hidden;
+        margin: 3px;
+      }
+      .info{
+        clear: both;
+        overflow: hidden;
+        margin: 0 2px;
+
+        li{
+          line-height: 20px;
+          &.write {
+            @extend .edit-icon;
+            @extend .icon;
+            background-position: -70px 3px;
+            a{
+              display: block;
+            }
+          }
+          &.edit_image {
+            position: absolute;
+            bottom: 5px;
+            overflow: visible;
+            display: inline-block;
+            height: 18px;
+            width: 20px;
+            margin-top: 10px;
+            background: asset_url('glyphicons-halflings-white.png') no-repeat;
+            background-position: 3px;
+            a {
+              display: inline-block;
+              padding-left: 20px;
+              white-space: pre;
+            }
+          }
+        }
+      }
+      &.not_approved {
+        border: 1px solid red;
+      }
+    }
+  }
+}
+
+//   Edit photo
+.edit_photo {
+  h2.admin_title {
+    background: $background;
+  }
+  .info {
+    overflow: hidden;
+    padding: 0 10px;
+    &>li {
+      margin-top: 2px;
+      float: right;
+      clear: right;
+      width: 50%;
+      font-size: 18px;
+      &.author {
+        float: left;
+        margin-top: 8px;
+        text-align: center;
+      }
+      &#place-name {
+        padding: 0;
+        border-bottom: 0;
+        font-size: 18px;
+      }
+      &.date {
+        input {
+          height: 20px;
+        }
+      }
+      &.btn-group {
+        ul {
+          li{
+            display: inline-block;
+            width: 120px;
+            input[type=submit] {
+              font-size: 14px;
+              width: 100%;
+            }
+            &.cancel {
+              margin-left: 10%;
+              a {
+                display: inline-block;
+                width: 100%;
+                padding: 0;
+                line-height: 28px;
+                color: #000000;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .miniature {
+    position: absolute;
+    bottom: 1%;
+    top: 140px;
+    left: 1%;
+    width: 49%;
+    height: auto;
+    @include box-sizing(border-box);
+
+    img {
+      border: 2px solid #ffffff;
+      @include box-sizing(border-box);
+    }
+  }
+  #edit-photo-map{
+    position: absolute;
+    bottom: 1%;
+    top: 140px;
+    right: 1%;
+    width: 49%;
+  }
+
+}
+
+//    ADMIN USER
+.admin_users {
+  .search {
+    @extend .sidebar;
+    width: 240px;
+    margin-bottom: 10px;
+    line-height: 20px;
+    label {
+      font-size: 16px;
+    }
+    input[type=text] {
+      float: right;
+      height: 20px;
+    }
+  }
+  .admin_sidebar {
+    clear: right;
+    @extend .sidebar;
+    width: 240px;
+    li.write {
+      margin: 10px 0 0;
+    }
+  }
+  .table {
+    overflow: auto;
+    margin: 0 0.5% 0.5%;
+    border: 1px solid #ffffff;
+    background: $background;
+    font-size: 12px;
+
+    table{
+      width: 100%;
+      min-width: 1200px;
+      thead tr {
+        background: #000000;
+      }
+      td {
+        padding: 5px 7px;
+        .write {
+          @extend .edit-icon;
+          @extend .icon;
+          background-position: -70px 1px;
+          a{
+            display: block;
+          }
+        }
+      }
+      .admin_user {
+        color: #FEDB2F;
+        font-weight: bold;
+      }
+      .superadmin_user {
+        color: #FF0000;
+        font-weight: bold;
+      }
+    }
+  }
+}

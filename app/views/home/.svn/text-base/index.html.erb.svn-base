@@ -1,0 +1,35 @@
+<div id="content">
+  <!-- Map -->
+  <div id="map_canvas">Карта</div>
+  <div id = "control">
+     <button id="change-mode" class="click-mode"></button>
+  </div>
+  <!--Shadow Layer -->
+  <div id="layer">
+    <div id="layerLeft" class="layer canHide canDisplay left">
+      <div class="transparency"></div>
+    </div>
+    <div id="layerUp" class="layer canHide canDisplay up">
+      <div class="transparency"></div>
+    </div>
+    <div id="layerRight" class="layer canHide canDisplay right">
+      <div class="transparency"></div>
+    </div>
+    <div id="layerDown" class="layer canHide canDisplay down">
+      <div class="transparency"></div>
+    </div>
+
+    <!-- Rectangle -->
+    <div id="eventRectangle"></div>
+  </div>
+
+  <%= render 'map_click' %>
+  <%= render 'upload_photo' %>
+
+  <!-- Timeline -->
+  <div class="photos"></div>
+
+  <!-- View photo -->
+  <div class="currentPhoto"></div>
+
+</div>

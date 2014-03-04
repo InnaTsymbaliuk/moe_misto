@@ -1,0 +1,7 @@
+<p>Привіт <%= @email %>!</p>
+
+<p>Ви зареєструвались на сайті MoeMisto</p>
+
+<p>Для підтвердження свого email перейдіть за посиланням:</p>
+
+<p><%= link_to 'Підтвердити мій аккаунт', confirmation_url(@resource, :confirmation_token => @token) %></p>

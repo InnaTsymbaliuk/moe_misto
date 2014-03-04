@@ -1,0 +1,134 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+//mixins
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin box-sizing($box-type) {
+  box-sizing: $box-type;
+  -moz-box-sizing: $box-type;
+  -webkit-box-sizing: $box-type;
+}
+
+#user_messages {
+  text-align: left;
+  .message_block {
+    position: relative;
+    min-height: 80px;
+    width: 400px;
+    padding: 10px;
+    margin: 5px 0 15px 60px;
+    border: 1px solid #FFFFFF;
+    @include border-radius(5px);
+    .img {
+      overflow: hidden;
+      position: absolute;
+      top: -1px;
+      left: -50px;
+      width: 100px;
+      height: 100px;
+      border: 1px solid #FFFFFF;
+      @include border-radius(50px);
+      background: #000000;
+      img{
+        max-height: 100%;
+        max-width: 100%;
+      }
+    }
+    .message_header {
+      margin-left: 45px;
+      h4 {
+        float: left;
+      }
+      .message_date {
+        float: right;
+      }
+    }
+    .message_content {
+      clear: both;
+      padding: 3px 10px;
+      margin-left: 60px;
+      background: #000000;
+    }
+    .delete_message {
+      position: absolute;
+      bottom: -5px;
+      right: -5px;
+      height: 20px;
+      width: 20px;
+      text-indent: -9999px;
+      cursor: pointer;
+      border: 1px solid #FFFFFF;
+      @include border-radius(15px);
+      background: #000000 asset_url('glyphicons-halflings-white.png') no-repeat;
+      background-position: -453px 3px;
+    }
+  }
+}
+
+#message_popup {
+  .header {
+    color: #FFFFFF;
+    .img {
+      overflow: hidden;
+      float: left;
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+      border: 1px solid #FFFFFF;
+      @include border-radius(50px);
+      @include box-sizing(border-box);
+      img{
+        max-height: 100%;
+        max-width: 100%;
+      }
+    }
+    h3 {
+      line-height: 50px;
+    }
+  }
+  .content {
+    height: 100px;
+    margin-top: 12px;
+    textarea {
+      width: 100%;
+      height: 100%;
+      resize: none;
+    }
+  }
+  .footer {
+    position: absolute;
+    bottom: 10px;
+    width: 370px;
+    ul {
+      text-align: center;
+      li {
+        display: inline-block;
+        overflow: hidden;
+        @include box-sizing(border-box);
+        width: 150px;
+        height: 30px;
+        padding: 0;
+        input, a {
+          width: 100%;
+          height: inherit;
+        }
+        a {
+          display: block;
+          height: inherit;
+          line-height: 28px;
+        }
+        &:first-child {
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+<% if params[:date] == 'desc' || params[:autor] == 'desc' || params[:status] == 'desc' %>
+  <% @photos.sort.each do |key, photos| %>
+    <p style="font-size: 20px;">
+      <%= key.strftime("%m.%Y") if params[:date] %>
+      <%= "#{key.first_name} #{key.last_name}" if params[:autor] %>
+      <%= ( key == 'false' ? 'not approved' : 'approved' ) if params[:status] %>
+    </p>
+    <% photos.each do |photo| %>
+      <div class="photo_block <%= 'not_approved' if photo.approved == false %>">
+        <div class="miniature"><%= image_tag photo.image_url(:small), id: photo.id %></div>
+        <div class="check"><%= check_box_tag "photo_id_#{photo.id}", "#{photo.id}" %></div>
+        <ul class="info">
+          <li class="write"><%= link_to 'Написати автору', recepient_path(recepient: photo.user.id), method: :post, remote: true, title: "Contact author" %></li>
+          <li><%= t('author') %>: <%= "#{photo.user.first_name} #{photo.user.last_name}" %></li>
+          <li><%= t('date') %>: <%= photo.photo_date.strftime("%d.%m.%Y") %></li>
+          <li><%= t('place') %>: <%= photo.location.address %></li>
+          <li class="edit_image"><%= link_to t('edit_photo'), edit_admin_photo_path(photo) %></li>
+        </ul>
+      </div>
+    <% end %>
+  <% end %>
+<% else %>
+  <% @photos.sort.reverse_each do |key, photos| %>
+    <p style="font-size: 20px;">
+      <%= key.strftime("%m.%Y") if params[:date] %>
+      <%= "#{key.first_name} #{key.last_name}" if params[:autor] %>
+      <%= ( key == 'false' ? 'not approved' : 'approved' ) if params[:status] %>
+    </p>
+    <% photos.each do |photo| %>
+      <div class="photo_block <%= 'not_approved' if photo.approved == false %>">
+        <div class="miniature"><%= image_tag photo.image_url(:small), id: photo.id %></div>
+        <%= check_box_tag "photo_id_#{photo.id}", "#{photo.id}" %>
+        <ul class="info">
+          <li class="write"><%= link_to 'Написати автору', recepient_path(recepient: photo.user.id), method: :post, remote: true, title: "Contact author" %></li>
+          <li><%= t('author') %>: <%= "#{photo.user.first_name} #{photo.user.last_name}" %></li>
+          <li><%= t('date') %>: <%= photo.photo_date.strftime("%d.%m.%Y") %></li>
+          <li><%= t('place') %>: <%= photo.location.address %></li>
+          <li class="edit_image"><%= link_to t('edit_photo'), edit_admin_photo_path(photo) %></li>
+        </ul>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>

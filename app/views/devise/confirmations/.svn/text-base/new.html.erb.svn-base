@@ -1,0 +1,19 @@
+<div id="registration-container">
+<div id="registration">
+  <h4><%= t('confirmation_instructions') %></h4>
+  <%= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f| %>
+    <fieldset>
+      <dl>
+        <dt class="info"><%= t('resend_confirmation') %></dt>
+        <dt><%= f.label :email %></dt>
+        <dd>
+          <%= f.email_field :email, :autofocus => true %>
+          <div id="e-mail-error" class="error"></div>
+        </dd>
+        <dt class="submit"><%= f.submit t("resend"), class: 'btn' %></dt>
+      </dl>
+    </fieldset>
+  <% end %>
+  <%= render "devise/shared/links" %>
+</div>
+</div>

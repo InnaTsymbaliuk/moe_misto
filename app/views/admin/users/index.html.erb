@@ -1,0 +1,119 @@
+<div class="admin_users">
+  <h2 class="admin_title"><%= t('admin_users') %></h2>
+  <div class="search">
+    <%= form_tag(admin_users_path, method: "get") do %>
+      <%= label_tag(:search, t('author_search') ) %>
+      <%= text_field_tag(:search, nil) %>
+      <%= submit_tag(t('find'), class: 'btn') %>
+    <% end %>
+    <%= link_to t('select_all'), admin_users_path, class: 'btn' %>
+  </div>
+
+  <%= form_tag("/admin/destroy_block", method: "post") do %>
+    <div class="admin_sidebar">
+      <ul>
+        <li>
+          <%= radio_button_tag(:block_delete, "block") %>
+          <%= label_tag(:block_delete, t('block_upload') ) %>
+        </li>
+        <li>
+          <%= radio_button_tag(:block_delete, "unblock") %>
+          <%= label_tag(:block_delete, t('unblock_upload') ) %>
+        </li>
+        <li>
+          <%= radio_button_tag(:block_delete, "delete") %>
+          <%= label_tag(:block_delete, t('delete_user')) %>
+        </li>
+        <% if current_user.role == 'superadmin' %>
+          <li>
+            <%= radio_button_tag(:add_admin, "true") %>
+            <%= label_tag(:add_admin, t('admin_rights')) %>
+          </li>
+          <li>
+            <%= radio_button_tag(:add_admin, "false") %>
+            <%= label_tag(:add_admin, t('not_admin_rights')) %>
+          </li>
+        <% end %>
+      </ul>
+      <%= submit_tag("Ok", class: 'btn') %>
+    </div>
+    <div class="table">
+        <table>
+          <thead>
+            <tr>
+              <td><%= t('select_all') %>: <%= check_box_tag :users, 'all' %></td>
+              <td>
+                  <%= t('name') %>
+                  <%= link_to 'Sort_up', admin_users_path(sort: 'first_name_asc'), class: 'sort_up' %>
+                  <%= link_to 'Sort_down', admin_users_path(sort: 'first_name_desc'), class: 'sort_down' %>
+              </td>
+              <td>
+                  <%= t('surname') %>
+                  <%= link_to 'Sort_up', admin_users_path(sort: 'last_name_asc'), class: 'sort_up' %>
+                  <%= link_to 'Sort_down', admin_users_path(sort: 'last_name_desc'), class: 'sort_down' %>
+              </td>
+              <td>
+                  E-mail
+                  <%= link_to 'Sort_up', admin_users_path(sort: 'email_asc'), class: 'sort_up' %>
+                  <%= link_to 'Sort_down', admin_users_path(sort: 'email_desc'), class: 'sort_down' %>
+              </td>
+              <td>
+                  <%= t('date_of_birth') %>
+                  <%= link_to 'Sort_up', admin_users_path(sort: 'birth_date_asc'), class: 'sort_up' %>
+                  <%= link_to 'Sort_down', admin_users_path(sort: 'birth_date_desc'), class: 'sort_down' %>
+              </td>
+              <td>
+                  <%= t('reg_date') %>
+                  <%= link_to 'Sort_up', admin_users_path(sort: 'created_at_asc'), class: 'sort_up' %>
+                  <%= link_to 'Sort_down', admin_users_path(sort: 'created_at_desc'), class: 'sort_down' %>
+              </td>
+              <td>
+                  <%= t('gender') %>
+                  <%= link_to 'Sort_up', admin_users_path(sort: 'gender_asc'), class: 'sort_up' %>
+                  <%= link_to 'Sort_down', admin_users_path(sort: 'gender_desc'), class: 'sort_down' %>
+              </td>
+              <td>
+                  <%= t('number_of_photos') %>
+                  <%= link_to 'Sort_up', admin_users_path(photo: 'asc'), class: 'sort_up' %>
+                  <%= link_to 'Sort_down', admin_users_path(photo: 'desc'), class: 'sort_down' %>
+              </td>
+              <td>
+                  <%= t('complaints') %>
+                  <%= link_to 'Sort_up', admin_users_path(claim: 'asc'), class: 'sort_up' %>
+                  <%= link_to 'Sort_down', admin_users_path(claim: 'desc'), class: 'sort_down' %>
+              </td>
+              <td>
+                  <%= t('photo') %>
+                  <%= link_to 'Sort_up', admin_users_path(sort: 'upload_photo_asc'), class: 'sort_up' %>
+                  <%= link_to 'Sort_down', admin_users_path(sort: 'upload_photo_desc'), class: 'sort_down' %>
+              </td>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @users.each do |user| %>
+            <tr class="<%= 'admin_user' if user.is_admin? %> <%= 'superadmin_user' if user.is_superadmin? %>">
+                <td><%= check_box_tag "user_id_#{user.id}", "#{user.id}" %></td>
+                <td>
+                    <span class="write"><%= link_to 'Написати', recepient_path(recepient: user.id), method: :post, remote: true, title: "Contact" %></span>
+                    <%= user.first_name %>
+                </td>
+                <td><%= user.last_name %></td>
+                <td><%= user.email %></td>
+                <td><%= user.birth_date.strftime("%d.%m.%Y") if user.birth_date %></td>
+                <td><%= user.created_at.strftime("%d.%m.%Y") if user.created_at %></td>
+                <td><%= user.gender %></td>
+                <td><%= user.photos.count %></td>
+                <td>0</td>
+                <td><%= user.upload_photo == true ? '+' : '-' %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+    </div>
+  <% end %>
+</div>
+
+<script>
+    manageAdminUsers();
+</script>

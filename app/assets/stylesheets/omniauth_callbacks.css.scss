@@ -1,0 +1,34 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+.social-links {
+  text-align: center;
+  h4 {
+    margin-bottom: 5px;
+    font-size: 16px;
+  }
+  ul{
+    li {
+      display: inline-block;
+      overflow: hidden;
+      width: 100px;
+      height: 26px;
+      border-radius: 3px;
+      &.vk {
+        background:asset_url("vk.png") top left no-repeat;
+      }
+      &.fb {
+        margin-left: 30px;
+        background:asset_url("fb.png") top left no-repeat;
+      }
+      a {
+        display: block;
+        height: 100%;
+        width: 100%;
+        text-indent: -9999px;
+      }
+    }
+  }
+}
